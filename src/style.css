@@ -35,10 +35,10 @@
   
   main p {
       font-family: 'Press Start 2P', serif;
-      font-size: 11.5px;
+      font-size: 16px;
       text-align: center;
       margin: 5%;
-      line-height: 13px;
+      line-height: 18px;
   }
   
   .contenedor1 button {
