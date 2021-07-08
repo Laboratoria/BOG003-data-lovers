@@ -4,11 +4,7 @@
       padding: 0;
   }
   
-  @font-face {
-      font-family: "Game Over";
-      src: url("./fonts/game_over.ttf");
-      font-display: swap;
-  }
+ 
   
   body {
       background-color: #E23955;
@@ -48,8 +44,8 @@
   }
   
   main p {
-      font-family: "Game Over";
-      font-size: 64px;
+      font-family: 'Press Start 2P', serif;
+      font-size: 35px;
       text-align: center;
       margin-bottom: 10vh;
   }
@@ -82,8 +78,8 @@
   }
   
   button h3 {
-      font-family: "Game Over";
-      font-size: 60px;
+      font-family: 'Press Start 2P', serif;
+      font-size: 20px;
       text-align: center;
       border-top: 3px solid black
   }
