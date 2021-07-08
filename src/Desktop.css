@@ -4,7 +4,6 @@
     padding: 0;
 }
 
-
 body {
     background-color: #E23955;
     width: 100%;
@@ -44,7 +43,7 @@ body {
 
 main p {
     font-family: 'Press Start 2P', serif;
-    font-size: 35px;
+    font-size: 20px;
     text-align: center;
     margin-bottom: 10vh;
 }
@@ -79,7 +78,7 @@ button .imagen_boton3 {
 
 button h3 {
     font-family: 'Press Start 2P', serif;
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
     border-top: 3px solid black
 }
