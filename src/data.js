@@ -5,5 +5,23 @@ export const example = () => {
 };
 
 export const anotherExample = () => {
-  return 'OMG';
+  return('OMG');
+};
+
+
+
+export const filtrarPokemon = (datos, condicion) => {
+  return datos.filter(condicion); 
+}
+
+// export const filtroPoke = (datos, condicion) => {
+//   let arrayvacio = [];
+//   for (let i=0, i < datos.length, i++){
+//     for (let j=0, j<datos[i].)
+//   }
+// }
+ 
+export const equisde = () => {
+  console.log("equisde");
+
 };

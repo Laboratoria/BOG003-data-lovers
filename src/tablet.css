@@ -94,3 +94,8 @@
       width: 30vw;
       height: 20vw;
   }
+
+  .pagListado{
+    display: flex;
+    flex-direction: column;
+}
