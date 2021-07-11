@@ -88,6 +88,7 @@ button h3 {
     width: 14vw;
     height: 14vw;
     margin-bottom: -14vh;
+    cursor: pointer;
 }
 
 #boton3 {
@@ -97,4 +98,14 @@ button h3 {
     height: 14vw;
     margin-top: -14vh;
     width: 22vw;
+    cursor: pointer;
+}
+
+#botonVolver{
+    cursor: pointer;
+}
+
+.pagListado{
+    display: flex;
+    flex-direction: column;
 }

@@ -16,7 +16,7 @@
 
 <body>
     <div class="contenedor1">
-        <section class="seccionBorde">
+        <section class="bienvenida" id="bienvenida">
             <main class="contenido">
                 <figure class="titulo_imagen_poketoriaPokebola">
                     <img class="imagen_poketoria" src="img/tituloPoketoria.png" alt="titulo_poketoria">
@@ -38,6 +38,45 @@
                         <h3>Johto y Kanto</h3>
                     </button>
             </main>
+        </section>
+        <section class="pagListado" id="pagListado">
+            <figure> 
+                <img class="imagen_poketoria" src="img/tituloPoketoria.png" alt="titulo_poketoria">
+            </figure>
+            <h4>Filtrar por:</h4>
+            <select name="Tipo" id="Tipo">
+                <option selected>Tipo</option>
+                <option value="0">Todos</option>
+                <option value="1">Normal</option> 
+                <option value="2">Hierba</option> 
+                <option value="3">Fuego</option> 
+                <option value="4">Agua</option>
+                <option value="5">Acero</option> 
+                <option value="6">Eléctrico</option> 
+                <option value="7">Hielo</option> 
+                <option value="8">Lucha</option>
+                <option value="9">Veneno</option> 
+                <option value="10">Roca</option> 
+                <option value="11">Volador</option> 
+                <option value="12">Psíquico</option>
+                <option value="13">Bicho</option> 
+                <option value="14">Tierra</option> 
+                <option value="15">Fantasma</option>
+                <option value="16">Dragon</option> 
+                <option value="17">Siniestro</option>
+            </select>
+            <h4>Ordenar por:</h4>
+            <select name="orden" id="orden">
+                <option value="Número">Número</option> 
+                <option value="Alfabético">Alfabético</option> 
+                <option value="Suma de stats base">Estadísticas base</option> 
+                <option value="Promedio de stats base">Promedio estadísticas</option>
+                <option value="Desviación típica de stats base">Dispersión de estadísticas</option> 
+            </select>
+            <button id="botonVolver">Volver</button>
+            
+            <div id="listadoPokemon"></div>
+
         </section>
     </div>
     <script src="main.js" type="module"></script>

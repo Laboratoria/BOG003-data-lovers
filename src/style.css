@@ -31,6 +31,7 @@
       box-sizing: border-box;
       border-radius: 31px;
       width: 95vw;
+      min-height: 97vh;
   }
   
   main p {
@@ -71,7 +72,7 @@
       font-size: 12px;
       text-align: center;
       margin: -5%;
-      border-top: 3px solid black
+      border-top: 3px solid black;
   }
   
   #boton1,
@@ -85,3 +86,12 @@
       margin-top: -4vh;
       margin-bottom: 4vh;
   }
+
+#botonVolver{
+    cursor: pointer;
+}
+
+.pagListado{
+    display: flex;
+    flex-direction: column;
+}
