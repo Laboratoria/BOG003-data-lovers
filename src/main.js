@@ -1,4 +1,4 @@
-import { example, filtrarPokemon } from './data.js';
+import { example, filtrarTipo, filtrarRegion} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 
@@ -15,15 +15,15 @@ const bienvenida = () => {
 }
 
 // Funciones que construyen la condición 
-const filtroAtributoArreglo = (atributo, valor) => {
-    return (pokemon) => (pokemon[atributo].includes(valor));
-} 
+// const filtroAtributoArreglo = (tipo, generacion) => {
+//     return (pokemon) => (pokemon[atributo].includes(tipo));
+// } 
 
-const filtroAtributoObjeto = (atributo, atributo2, valor) => {
-    return (pokemon) => (pokemon[atributo][atributo2]===valor);
-}
+// const filtroAtributoObjeto = (atributo, atributo2, valor) => {
+//     return (pokemon) => (pokemon[atributo][atributo2]===valor);
+// }
 
-const paginaListado = () => {
+const paginaListado = (region) => {
     
     let pagBienvenida = document.getElementById("bienvenida");
     let pagListado = document.getElementById("pagListado");
@@ -32,73 +32,81 @@ const paginaListado = () => {
     pagBienvenida.style.display="none";
     pagListado.style.display="block";
 
-    const eleccionTipo = document.getElementById("Tipo");
-    template(dataPoke);
+    if (region === "johto"){
+        let pokemonJohto = filtrarRegion(dataPoke, "johto");
+        template(pokemonJohto);
+        console.log(pokemonJohto);
+        const eleccionTipo = document.getElementById("Tipo");
+        
 
-    eleccionTipo.addEventListener("change", (event) => {
+        eleccionTipo.addEventListener("change", (event) => {
         
-        const resultado = event.target.value;
-        console.log(resultado);
+            const resultado = event.target.value;
+            console.log(resultado);
         
-        if (resultado==="0") {
-             template(dataPoke);
-        } else if (resultado==="1") {
-            let condicion = filtroAtributoArreglo("type", "normal");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="2") {
-            let condicion = filtroAtributoArreglo("type", "grass");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="3") {
-            let condicion = filtroAtributoArreglo("type", "fire");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="4") {
-            let condicion = filtroAtributoArreglo("type", "water");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="5") {
-            let condicion = filtroAtributoArreglo("type", "steel");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="6") {
-            let condicion = filtroAtributoArreglo("type", "electric");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="7") {
-            let condicion = filtroAtributoArreglo("type", "ice");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="8") {
-            let condicion = filtroAtributoArreglo("type", "fighting");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="9") {
-            let condicion = filtroAtributoArreglo("type", "poison");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="10") {
-            let condicion = filtroAtributoArreglo("type", "rock");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="11") {
-            let condicion = filtroAtributoArreglo("type", "flying");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="12") {
-            let condicion = filtroAtributoArreglo("type", "psychic");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="13") {
-            let condicion = filtroAtributoArreglo("type", "bug");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="14") {
-            let condicion = filtroAtributoArreglo("type", "ground");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="15") {
-            let condicion = filtroAtributoArreglo("type", "ghost");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="16") {
-            let condicion = filtroAtributoArreglo("type", "dragon");
-            template(filtrarPokemon(dataPoke,condicion));
-        } else if (resultado==="17") {
-            let condicion = filtroAtributoArreglo("type", "dark");
-            template(filtrarPokemon(dataPoke,condicion));
-        } 
-    });
+            if (resultado==="0") {
+              template(pokemonJohto);
+            } else {
+            template(filtrarTipo(pokemonJohto,resultado));
+            }      
+       
+        });
+
         
+
+    } else if (region === "kanto"){
+        let pokemonKanto = filtrarRegion(dataPoke, "kanto");
+        template(pokemonKanto);
+        const eleccionTipo = document.getElementById("Tipo");
+        
+
+        eleccionTipo.addEventListener("change", (event) => {
+        
+            const resultado = event.target.value;
+            console.log(resultado);
+        
+            if (resultado==="0") {
+              template(pokemonKanto);
+            } else {
+            template(filtrarTipo(pokemonKanto,resultado));
+            }      
+       
+        });
+
+    } else if (region === "ambos"){
+        const eleccionTipo = document.getElementById("Tipo");
+        template(dataPoke);
+    
+        eleccionTipo.addEventListener("change", (event) => {
+            
+            const resultado = event.target.value;
+            console.log(resultado);
+            
+            if (resultado==="0") {
+                  template(dataPoke);
+            } else {
+                template(filtrarTipo(dataPoke,resultado));
+            }      
+           
+        });
+    };
+
+    // const eleccionTipo = document.getElementById("Tipo");
+    // template(dataPoke);
+
+    // eleccionTipo.addEventListener("change", (event) => {
+        
+    //     const resultado = event.target.value;
+    //     console.log(resultado);
+        
+    //     if (resultado==="0") {
+    //           template(dataPoke);
+    //     } else {
+    //         template(filtrarTipo(dataPoke,resultado));
+    //     }      
+       
+    // });
 };
-
-
 
 const template = (list) => {
     let listaPokemon = "";
@@ -123,14 +131,14 @@ const template = (list) => {
 bienvenida();
 
 
-const botonJohto = document.getElementById("boton1");
-botonJohto.addEventListener("click", paginaListado);
+const botonJohto = document.getElementById("johto");
+botonJohto.addEventListener("click", () => paginaListado("johto"));
 
-const botonKanto = document.getElementById("boton2");
-botonKanto.addEventListener("click", paginaListado);
+const botonKanto = document.getElementById("kanto");
+botonKanto.addEventListener("click", () => paginaListado("kanto"));
 
-const botonAmbos = document.getElementById("boton3");
-botonAmbos.addEventListener("click", paginaListado);
+const botonAmbos = document.getElementById("ambos");
+botonAmbos.addEventListener("click", () => paginaListado("ambos"));
 
 const botonVolver = document.getElementById("botonVolver");
 botonVolver.addEventListener("click", bienvenida);
