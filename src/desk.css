@@ -105,7 +105,24 @@ button h3 {
     cursor: pointer;
 }
 
-.pagListado{
-    display: flex;
-    flex-direction: column;
+.tarjetaIndividual{
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 10vh 10vh 10vh;
+    grid-gap: 20px;
+    grid-template-areas: "." "pokeNum pokeNombre pokeImg" ".";
+}
+
+#pokeNum{
+    grid-area: pokeNum;
+
+}
+#pokeNombre{
+    grid-area: pokeNombre;
+
+}
+
+#pokeImg{
+    grid-area: pokeImg;
+
 }

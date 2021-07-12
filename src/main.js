@@ -1,10 +1,10 @@
-import { example, filtrarPokemon, equisde } from './data.js';
+import { example, filtrarPokemon } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 
 const dataPoke = data.pokemon;
 console.log(example, data.pokemon);
-console.log(equisde);
+
 
 const bienvenida = () => {
    let pagBienvenida = document.getElementById("bienvenida");
@@ -105,9 +105,12 @@ const template = (list) => {
     list.forEach((dataPoke) => {
         const card = ` 
         <div class="tarjetaPokemon">
-        <h3 class="pokeNum"> '${dataPoke.num}'</h3>
-        <h3 class="pokeNombre"> '${dataPoke.name}'</h3>
-        <img class="pokeImg" src='${dataPoke.img}'>
+            <div class="tarjetaIndividual">
+                <h3 class="pokeNum"> ${dataPoke.num}</h3>
+                <h3 class="pokeNombre"> ${dataPoke.name}</h3>
+                <img class="pokeImg" src='${dataPoke.img}'>
+            </div>
+            
         </div>`
         listaPokemon+= card;
         console.log(dataPoke.generation.name);

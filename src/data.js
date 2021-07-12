@@ -21,7 +21,3 @@ export const filtrarPokemon = (datos, condicion) => {
 //   }
 // }
  
-export const equisde = () => {
-  console.log("equisde");
-
-};
