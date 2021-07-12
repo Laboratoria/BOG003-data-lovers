@@ -83,15 +83,15 @@ button h3 {
     border-top: 3px solid black
 }
 
-#boton1,
-#boton2 {
+#johto,
+#kanto {
     width: 14vw;
     height: 14vw;
     margin-bottom: -14vh;
     cursor: pointer;
 }
 
-#boton3 {
+#ambos {
     display: flex;
     flex-direction: column;
     align-items: center;
