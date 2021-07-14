@@ -41,6 +41,19 @@ body {
     align-items: center
 }
 
+.contenido2 {
+    background-color: #ECFAFB;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 31px;
+    width: 94vw;
+    height: 70%;
+    margin-bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
 main p {
     font-family: 'Press Start 2P', serif;
     font-size: 20px;
@@ -101,11 +114,23 @@ button h3 {
     cursor: pointer;
 }
 
-#botonVolver{
+#flechaVolver {
     cursor: pointer;
+    /* position: relative; */
+    color: #E23955;
+    text-decoration: none;
+    /* margin-left: 80vw; */
+    margin-bottom: 18vh;
+    /* padding: 1%;  */
+    font-size: 30px;
 }
 
-.tarjetaIndividual{
+#flechaVolver:hover {
+    color: #E23955;
+    text-shadow: 0 0 10px #dcb8be, 0 0 40px #dcb8be, 0 0 80px #dcb8be;
+}
+
+.tarjetaIndividual {
     display: grid;
     grid-template-columns: 20vw 20vw 20vw;
     grid-template-rows: 10vh 10vh 10vh;
@@ -113,16 +138,115 @@ button h3 {
     grid-template-areas: "." "pokeNum pokeNombre pokeImg" ".";
 }
 
-#pokeNum{
+
+/* #pokeNum {
     grid-area: pokeNum;
-
 }
-#pokeNombre{
+
+#pokeNombre {
     grid-area: pokeNombre;
-
 }
 
-#pokeImg{
+#pokeImg {
     grid-area: pokeImg;
+} */
 
+#listadoPokemon {
+    display: flex;
+    flex-direction: column;
+    margin-top: -4vh;
+}
+
+
+/* .tarjetaIndividual {
+    background-color: #DC9091;
+} */
+
+.tarjetaPokemon {
+    background-color: #DC9091;
+    border-radius: 34px;
+    height: 70px;
+    margin: 2px 0;
+}
+
+.pokeImg {
+    background-color: white;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+h3 {
+    font-family: 'Press Start 2P', serif;
+    font-size: 15px;
+    margin: auto 0;
+}
+
+.pokeNum {
+    margin-left: 5vh;
+}
+
+
+/* .opciones {
+    display: flex;
+    flex-direction: row;
+} */
+
+h4 {
+    font-family: 'Press Start 2P', serif;
+    font-size: 15px;
+    text-align: center;
+    width: 20vw;
+    padding-left: 5vh;
+    margin-top: 1.2vh;
+}
+
+#tipo,
+#orden {
+    margin-left: 5vh;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border-radius: 15px;
+    border: #000000 solid;
+    width: 20vw;
+    font-family: 'Press Start 2P', serif;
+    margin-bottom: 2.5vh;
+    background: #C4C4C4;
+    cursor: pointer;
+    margin-right: 10vh;
+}
+
+.opciones {
+    position: relative;
+    display: flex;
+    width: 15vh;
+    height: 8vh;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+}
+
+.opciones::after {
+    content: '\25BC';
+    position: absolute;
+    top: 20%;
+    right: 97vh;
+    padding: 0 1em;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.opciones:hover::after {
+    color: #2F3EC9;
+}
+
+.imagen_poketoria_2 {
+    width: 46vw;
+    height: 18vh;
+    margin-top: 8vh;
 }

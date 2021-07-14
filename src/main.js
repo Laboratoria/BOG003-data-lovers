@@ -1,4 +1,4 @@
-import { example, filtrarTipo, filtrarRegion} from './data.js';
+import { example, filtrarTipo, filtrarRegion } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 
@@ -7,11 +7,11 @@ console.log(example, data.pokemon);
 
 
 const bienvenida = () => {
-   let pagBienvenida = document.getElementById("bienvenida");
-   let pagListado = document.getElementById("pagListado");
+    let pagBienvenida = document.getElementById("bienvenida");
+    let pagListado = document.getElementById("pagListado");
 
-   pagBienvenida.style.display="block";
-   pagListado.style.display="none";
+    pagBienvenida.style.display = "block";
+    pagListado.style.display = "none";
 }
 
 // Funciones que construyen la condición 
@@ -24,70 +24,70 @@ const bienvenida = () => {
 // }
 
 const paginaListado = (region) => {
-    
+
     let pagBienvenida = document.getElementById("bienvenida");
     let pagListado = document.getElementById("pagListado");
     const dataPoke = data.pokemon;
 
-    pagBienvenida.style.display="none";
-    pagListado.style.display="block";
+    pagBienvenida.style.display = "none";
+    pagListado.style.display = "block";
 
-    if (region === "johto"){
+    if (region === "johto") {
         let pokemonJohto = filtrarRegion(dataPoke, "johto");
         template(pokemonJohto);
         console.log(pokemonJohto);
-        const eleccionTipo = document.getElementById("Tipo");
-        
+        const eleccionTipo = document.getElementById("tipo");
+
 
         eleccionTipo.addEventListener("change", (event) => {
-        
+
             const resultado = event.target.value;
             console.log(resultado);
-        
-            if (resultado==="0") {
-              template(pokemonJohto);
+
+            if (resultado === "0") {
+                template(pokemonJohto);
             } else {
-            template(filtrarTipo(pokemonJohto,resultado));
-            }      
-       
+                template(filtrarTipo(pokemonJohto, resultado));
+            }
+
         });
 
-        
 
-    } else if (region === "kanto"){
+
+    } else if (region === "kanto") {
         let pokemonKanto = filtrarRegion(dataPoke, "kanto");
         template(pokemonKanto);
-        const eleccionTipo = document.getElementById("Tipo");
-        
+        const eleccionTipo = document.getElementById("tipo");
+
 
         eleccionTipo.addEventListener("change", (event) => {
-        
+
             const resultado = event.target.value;
             console.log(resultado);
-        
-            if (resultado==="0") {
-              template(pokemonKanto);
+
+            if (resultado === "0") {
+                template(pokemonKanto);
             } else {
-            template(filtrarTipo(pokemonKanto,resultado));
-            }      
-       
+                template(filtrarTipo(pokemonKanto, resultado));
+            }
+
         });
 
-    } else if (region === "ambos"){
-        const eleccionTipo = document.getElementById("Tipo");
+    } else if (region === "ambos") {
+        const eleccionTipo = document.getElementById("tipo");
         template(dataPoke);
-    
+
         eleccionTipo.addEventListener("change", (event) => {
-            
+
             const resultado = event.target.value;
             console.log(resultado);
-            
-            if (resultado==="0") {
-                  template(dataPoke);
+
+            if (resultado === "0") {
+                template(dataPoke);
             } else {
-                template(filtrarTipo(dataPoke,resultado));
-            }      
-           
+                template(filtrarTipo(dataPoke, resultado));
+            }
+
         });
     };
 
@@ -95,16 +95,16 @@ const paginaListado = (region) => {
     // template(dataPoke);
 
     // eleccionTipo.addEventListener("change", (event) => {
-        
+
     //     const resultado = event.target.value;
     //     console.log(resultado);
-        
+
     //     if (resultado==="0") {
     //           template(dataPoke);
     //     } else {
     //         template(filtrarTipo(dataPoke,resultado));
     //     }      
-       
+
     // });
 };
 
@@ -114,16 +114,16 @@ const template = (list) => {
         const card = ` 
         <div class="tarjetaPokemon">
             <div class="tarjetaIndividual">
-                <h3 class="pokeNum"> ${dataPoke.num}</h3>
+                <h3 class="pokeNum"> #${dataPoke.num}</h3>
                 <h3 class="pokeNombre"> ${dataPoke.name}</h3>
                 <img class="pokeImg" src='${dataPoke.img}'>
-            </div>
-            
+            </div> 
         </div>`
-        listaPokemon+= card;
+
+        listaPokemon += card;
         console.log(dataPoke.generation.name);
     });
-    document.getElementById("listadoPokemon").innerHTML=listaPokemon;
+    document.getElementById("listadoPokemon").innerHTML = listaPokemon;
 }
 
 
@@ -140,8 +140,5 @@ botonKanto.addEventListener("click", () => paginaListado("kanto"));
 const botonAmbos = document.getElementById("ambos");
 botonAmbos.addEventListener("click", () => paginaListado("ambos"));
 
-const botonVolver = document.getElementById("botonVolver");
+const botonVolver = document.getElementById("flechaVolver");
 botonVolver.addEventListener("click", bienvenida);
-
-
-

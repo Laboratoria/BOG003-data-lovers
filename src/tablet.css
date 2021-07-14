@@ -82,20 +82,20 @@
       border-top: 3px solid black
   }
   
-  #boton1,
-  #boton2 {
+  #johto,
+  #kanto {
       width: 20vw;
       height: 20vw;
       margin-bottom: -14vh;
   }
   
-  #boton3 {
+  #ambos {
       margin-top: -14vh;
       width: 30vw;
       height: 20vw;
   }
-
-  .pagListado{
-    display: flex;
-    flex-direction: column;
-}
+  
+  .pagListado {
+      display: flex;
+      flex-direction: column;
+  }

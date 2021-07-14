@@ -40,45 +40,49 @@
             </main>
         </section>
         <section class="pagListado" id="pagListado">
-            <figure> 
-                <img class="imagen_poketoria" src="img/tituloPoketoria.png" alt="titulo_poketoria">
-            </figure>
-            <h4>Filtrar por:</h4>
-            <select name="Tipo" id="Tipo">
-                <option selected>Tipo</option>
-                <option value="0">Todos</option>
-                <option value="normal">Normal</option> 
-                <option value="grass">Hierba</option> 
-                <option value="fire">Fuego</option> 
-                <option value="water">Agua</option>
-                <option value="steel">Acero</option> 
-                <option value="electric">Eléctrico</option> 
-                <option value="ice">Hielo</option> 
-                <option value="fighting">Lucha</option>
-                <option value="poison">Veneno</option> 
-                <option value="rock">Roca</option> 
-                <option value="flying">Volador</option> 
-                <option value="psychic">Psíquico</option>
-                <option value="bug">Bicho</option> 
-                <option value="ground">Tierra</option> 
-                <option value="ghost">Fantasma</option>
-                <option value="dragon">Dragon</option> 
-                <option value="dark">Siniestro</option>
-            </select>
-            <h4>Ordenar por:</h4>
-            <select name="orden" id="orden">
-                <option value="Número">Número</option> 
-                <option value="Alfabético">Alfabético</option> 
-                <option value="Suma de stats base">Estadísticas base</option> 
-                <option value="Promedio de stats base">Promedio estadísticas</option>
-                <option value="Desviación típica de stats base">Dispersión de estadísticas</option> 
-            </select>
-            <button id="botonVolver">Volver</button>
+            <main class="contenido2">
+                <figure>
+                    <img class="imagen_poketoria_2" src="img/tituloPoketoria.png" alt="titulo_poketoria">
+                </figure>
+                <div class="opciones">
+                    <figure id="flechaVolver">🡸</figure>
+                    <h4>Filtrar por:</h4>
+                    <select name="Tipo" id="tipo">
+                        <option selected>Tipo</option>
+                        <option value="0">Todos</option>
+                        <option value="normal">Normal</option> 
+                        <option value="grass">Hierba</option> 
+                        <option value="fire">Fuego</option> 
+                        <option value="water">Agua</option>
+                        <option value="steel">Acero</option> 
+                        <option value="electric">Eléctrico</option> 
+                        <option value="ice">Hielo</option> 
+                        <option value="fighting">Lucha</option>
+                        <option value="poison">Veneno</option> 
+                        <option value="rock">Roca</option> 
+                        <option value="flying">Volador</option> 
+                        <option value="psychic">Psíquico</option>
+                        <option value="bug">Bicho</option> 
+                        <option value="ground">Tierra</option> 
+                        <option value="ghost">Fantasma</option>
+                        <option value="dragon">Dragon</option> 
+                        <option value="dark">Siniestro</option>
+                    </select>
+                    <h4>Ordenar por:</h4>
+                    <select name="orden" id="orden">
+                        <option value="Número">Número</option> 
+                        <option value="Alfabético">Alfabético</option> 
+                        <option value="Suma de stats base">Estadísticas base</option> 
+                        <option value="Promedio de stats base">Promedio estadísticas</option>
+                        <option value="Desviación típica de stats base">Dispersión de estadísticas</option> 
+                    </select>
 
-            
-            <div id="listadoPokemon"></div>
-            
+                </div>
 
+                <div id="listadoPokemon"></div>
+
+
+            </main>
         </section>
     </div>
     <script src="main.js" type="module"></script>

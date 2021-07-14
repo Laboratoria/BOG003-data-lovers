@@ -75,23 +75,23 @@
       border-top: 3px solid black;
   }
   
-  #boton1,
-  #boton2 {
+  #johto,
+  #kanto {
       width: 31vw;
   }
   
-  #boton3 {
+  #ambos {
       width: 77vw;
       height: 21vh;
       margin-top: -4vh;
       margin-bottom: 4vh;
   }
-
-#botonVolver{
-    cursor: pointer;
-}
-
-.pagListado{
-    display: flex;
-    flex-direction: column;
-}
+  
+  #botonVolver {
+      cursor: pointer;
+  }
+  
+  .pagListado {
+      display: flex;
+      flex-direction: column;
+  }
