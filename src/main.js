@@ -1,10 +1,8 @@
-import { example, filtrarTipo, filtrarRegion } from './data.js';
+import { example, filtrarTipo, filtrarRegion, ordenarPokemon, ordenarFiltrar } from './data.js';
 import data from './data/pokemon/pokemon.js';
-
 
 const dataPoke = data.pokemon;
 console.log(example, data.pokemon);
-
 
 const bienvenida = () => {
     let pagBienvenida = document.getElementById("bienvenida");
@@ -35,26 +33,41 @@ const paginaListado = (region) => {
     if (region === "johto") {
         let pokemonJohto = filtrarRegion(dataPoke, "johto");
         template(pokemonJohto);
-        console.log(pokemonJohto);
-        const eleccionTipo = document.getElementById("tipo");
+        // console.log(pokemonJohto);
 
+        document.getElementById("tipo").addEventListener("change", () => {
+            const tipo = document.getElementById("tipo").value;
+            const order = document.getElementById("orden").value;
 
-        eleccionTipo.addEventListener("change", (event) => {
+            template(ordenarFiltrar(dataPoke, tipo, order));
 
-            const resultado = event.target.value;
-            console.log(resultado);
+            /* const resultado = event.target.value;
+             console.log(resultado);
 
-            if (resultado === "0") {
-                template(pokemonJohto);
-            } else {
-                template(filtrarTipo(pokemonJohto, resultado));
-            }
+             if (resultado === "0") {
+                 template(pokemonJohto);
+             } else {
+                 template(filtrarTipo(pokemonJohto, resultado));
+             }*/
 
         });
 
+        document.getElementById("orden").addEventListener("change", () => {
+            const tipo = document.getElementById("tipo").value;
+            const order = document.getElementById("orden").value;
+
+            template(ordenarFiltrar(dataPoke, tipo, order));
+            /* const selecOrden = event.target.value;
+             if (selecOrden === "1") {
+                 template(ordenAlfabetico(dataPoke, "name", "A-Z"))
+             }*/
+        })
 
 
-    } else if (region === "kanto") {
+
+    }
+
+    if (region === "kanto") {
         let pokemonKanto = filtrarRegion(dataPoke, "kanto");
         template(pokemonKanto);
         const eleccionTipo = document.getElementById("tipo");
@@ -73,7 +86,16 @@ const paginaListado = (region) => {
 
         });
 
-    } else if (region === "ambos") {
+        // document.getElementById("orden").addEventListener("change", (event) => {
+        //     const selecOrden = event.target.value;
+        //     if (selecOrden === "1") {
+        //         template(ordenAlfabetico(dataPoke, "name", "A-Z"))
+        //     }
+        // });
+
+    }
+
+    if (region === "ambos") {
         const eleccionTipo = document.getElementById("tipo");
         template(dataPoke);
 
@@ -89,6 +111,13 @@ const paginaListado = (region) => {
             }
 
         });
+
+        // document.getElementById("orden").addEventListener("change", (event) => {
+        //     const selecOrden = event.target.value;
+        //     if (selecOrden === "1") {
+        //         template(ordenAlfabetico(dataPoke, "name", "A-Z"))
+        //     }
+        // })
     };
 
     // const eleccionTipo = document.getElementById("Tipo");
@@ -122,15 +151,10 @@ const template = (list) => {
         </div>`
 
         listaPokemon += card;
-        console.log(dataPoke.generation.name);
+        // console.log(dataPoke.generation.name);
     });
     document.getElementById("listadoPokemon").innerHTML = listaPokemon;
 }
-
-
-
-bienvenida();
-
 
 const botonJohto = document.getElementById("johto");
 botonJohto.addEventListener("click", () => paginaListado("johto"));
@@ -143,3 +167,15 @@ botonAmbos.addEventListener("click", () => paginaListado("ambos"));
 
 const botonVolver = document.getElementById("flechaVolver");
 botonVolver.addEventListener("click", bienvenida);
+
+bienvenida();
+
+
+//Segun la funcion ordenar
+
+// document.getElementById("orden").addEventListener("change", (event) => {
+//     const selecOrden = event.target.value;
+//     if (selecOrden === "1") {
+//         template(ordenAlfabetico(dataPoke, "name", "A-Z"))
+//     }
+// })

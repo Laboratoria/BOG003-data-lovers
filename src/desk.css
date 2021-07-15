@@ -122,7 +122,6 @@ button h3 {
     margin-left: 5vw;
     /* padding: 1%;  */
     font-size: 30px;
-    
 }
 
 #flechaVolver:hover {
@@ -164,19 +163,18 @@ button h3 {
 
 .tarjetaPokemon {
     background-color: #DC9091;
-    border-radius: 34px;
+    border: black solid;
     height: 90px;
     margin: 3px 0;
-
-
 }
-.tarjetaPokemon:hover{
+
+.tarjetaPokemon:hover {
     box-shadow: 0 0 5px #c0959b, 0 0 40px #da98a3, 0 0 80px #c58291;
-
 }
+
 .pokeImg {
     background-color: white;
-    border-radius: 50%;
+    border-radius: 30%;
     margin: 4px;
 }
 
@@ -205,19 +203,18 @@ h4 {
     margin-top: 1.2vh;
 }
 
-#tipo, #orden{
+#tipo,
+#orden {
     margin-left: 5vh;
 }
-
 
 select {
     /* -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
     appearance: none; */
-    outline: 0; 
+    outline: 0;
     box-shadow: none;
-    border-radius: 15px;
     border: #000000 solid;
     width: 20vw;
     font-family: 'Press Start 2P', serif;
@@ -227,12 +224,9 @@ select {
     margin-right: 10vh;
 }
 
-select:hover{
+select:hover {
     box-shadow: 0 0 10px #b68e94, 0 0 40px #c07c87, 0 0 80px #a86876;
-
 }
-
-
 
 .opciones {
     position: relative;
@@ -241,7 +235,6 @@ select:hover{
     height: 8vh;
     margin-top: 8vh;
     margin-bottom: 8vh;
-    
 }
 
 
@@ -254,6 +247,7 @@ select:hover{
     cursor: pointer;
     pointer-events: none;
 } */
+
 
 /*.opciones:hover::after {
     color: #2F3EC9;
