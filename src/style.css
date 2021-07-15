@@ -33,65 +33,194 @@
       width: 95vw;
       min-height: 97vh;
   }
+
+  .contenido2 {
+    background-color: #ECFAFB;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 31px;
+    width: 94vw;
+    height: 70%;
+    margin-bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
   
-  main p {
+main p {
       font-family: 'Press Start 2P', serif;
       font-size: 16px;
       text-align: center;
       margin: 5%;
       line-height: 18px;
-  }
+}
   
-  .contenedor1 button {
+.contenedor1 button {
       border: 3px solid;
       border-radius: 20PX;
       margin: 1vh 4vh 7vh 4vh;
       padding: 0% 4% 1% 3%;
       background-color: #F5EEC9;
-  }
+}
   
-  button .imagen_boton {
+button .imagen_boton {
       width: 100%;
       margin: 2%;
       padding: 4%;
       height: 62px;
-  }
+}
   
-  button .imagen_boton3 {
+button .imagen_boton3 {
       width: 90%;
       margin: 2%;
       padding: 4%;
-  }
+}
   
-  .contenedor1 div {
+.contenedor1 div {
       display: flex;
-  }
+}
   
-  button h3 {
+button h3 {
       font-family: 'Press Start 2P', serif;
       font-size: 12px;
       text-align: center;
       margin: -5%;
       border-top: 3px solid black;
-  }
+}
   
-  #johto,
-  #kanto {
+#johto,
+#kanto {
       width: 31vw;
-  }
+}
   
-  #ambos {
+#ambos {
       width: 77vw;
       height: 21vh;
       margin-top: -4vh;
       margin-bottom: 4vh;
-  }
+}
+      
   
-  #botonVolver {
-      cursor: pointer;
-  }
+#flechaVolver {
+    
+    /* position: relative; */
+    color: #E23955;
+    text-decoration: none;
+    
+    /* padding: 1%;  */
+    font-size: 23px;
+    margin-right: 68vw;
+    
+}  
+
+.tarjetaIndividual {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-gap: 30px;
+    grid-template-areas: "." "pokeNum pokeNombre . pokeImg" ".";
+    /* justify-items: end; */
+    justify-content: space-between;
+}  
+
+#listadoPokemon {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0vh;
+} 
+
+.tarjetaPokemon {
+    background-color: #DC9091;
+    border-radius: 34px;
+    height: 50px;
+    width: 85vw;
+    margin: 3px 0;
+    
+
+}
+
+.pokeImg {
+    background-color: white;
+    border-radius: 50%; 
+    margin: 4px;
+    margin-right: 1px;
+    margin-right: 10px;
+    justify-self: end;
+    grid-area: pokeImg;
+}
+
+#pokeNombre{
+    grid-area: pokeNombre;
+    justify-self: center;
+    align-self: center;
+}
+
+
+h3 {
+    font-family: 'Press Start 2P', serif;
+    font-size: 12px;
+    margin: auto 0;
+}
+
+.pokeNum {
+    margin-left: 5vh;
+    grid-area: pokeNum;
+    justify-self: center;
+    align-self: center;
+}
+
+h4 {
+    font-family: 'Press Start 2P', serif;
+    font-size: 10px;
+    text-align: center;
+    width: 50vw;
+    padding-left: 0vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+}
+
+#tipo, #orden{
+    margin-left: 5vh;
+}
+
+select {
+    /* -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none; */
+    outline: 0; 
+    box-shadow: none;
+    border-radius: 15px;
+    border: #000000 solid;
+    width: 60vw;
+    font-family: 'Press Start 2P', serif;
+    margin-bottom: 2.5vh;
+    background: #C4C4C4;
+    margin-right: 0vw;
+    
+}
+
+select:hover{
+    box-shadow: 0 0 10px #b68e94, 0 0 40px #c07c87, 0 0 80px #a86876;
+
+}
+
+.opciones {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vh;
+    height: 20vh;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    
+}
   
-  .pagListado {
-      display: flex;
-      flex-direction: column;
-  }
+.imagen_poketoria_2 {
+    width: 60vw;
+    height: 10vh;
+    margin-top: 3vh;
+}

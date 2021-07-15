@@ -117,7 +117,8 @@ const template = (list) => {
                 <h3 class="pokeNum"> #${dataPoke.num}</h3>
                 <h3 class="pokeNombre"> ${dataPoke.name}</h3>
                 <img class="pokeImg" src='${dataPoke.img}'>
-            </div> 
+            </div>
+        
         </div>`
 
         listaPokemon += card;
