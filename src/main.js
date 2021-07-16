@@ -1,11 +1,14 @@
-import { example, calcularSuma, calcularProm, filtrarRegion, ordenarFiltrar } from './data.js';
+import { example, calculoEstadistico, filtrarRegion, ordenarFiltrar } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
-const dataPoke = data.pokemon;
+const dataPoke = calculoEstadistico(data.pokemon);
+//const dataPoke = data.pokemon;
 console.log(example, dataPoke);
 //console.log(calcularSuma(data.pokemon));
 
-console.log(calcularProm(dataPoke));
+
+
+
 
 const bienvenida = () => {
     let pagBienvenida = document.getElementById("bienvenida");
@@ -19,7 +22,7 @@ const paginaListado = (region) => {
 
     let pagBienvenida = document.getElementById("bienvenida");
     let pagListado = document.getElementById("pagListado");
-    const dataPoke = data.pokemon;
+    //const dataPoke = data.pokemon;
 
     pagBienvenida.style.display = "none";
     pagListado.style.display = "block";

@@ -8,29 +8,53 @@ export const anotherExample = () => {
     return ('OMG');
 };
 
-export const calcularSuma = (datos) => {
+export const calculoEstadistico = (datos) => {
 
-        const ataque = datos.map((dato)=> {
-            return dato.stats["base-attack"]
-        });
-        const defensa = datos.map((dato)=> {
-         return dato.stats["base-defense"]
-        });
-        const estamina = datos.map((dato)=> {
-         return dato.stats["base-stamina"]
-        });
+    //     const ataque = datos.map((dato)=> {
+    //         return dato.stats["base-attack"]
+    //     });
+    //     const defensa = datos.map((dato)=> {
+    //      return dato.stats["base-defense"]
+    //     });
+    //     const estamina = datos.map((dato)=> {
+    //      return dato.stats["base-stamina"]
+    //     });
 
-        let arreglo1 = [ataque, defensa, estamina];
-        let arreglo2=[];
+    //     let arreglo1 = [ataque, defensa, estamina];
+    //     let arreglo2=[];
         
-        for (let i=0; i < arreglo1.length; i++){
-            for (let j=0; j < arreglo1[i].length +1; j++){
-                let suma = parseInt(arreglo1[0][j], 10)+parseInt(arreglo1[1][j], 10)+parseInt(arreglo1[2][j], 10);
-                arreglo2[j]=suma;
-            }
+    //     for (let i=0; i < arreglo1.length; i++){
+    //         for (let j=0; j < arreglo1[i].length; j++){
+    //             let suma = parseInt(arreglo1[0][j], 10)+parseInt(arreglo1[1][j], 10)+parseInt(arreglo1[2][j], 10);
+    //             arreglo2[j]=suma;
+    //         }
     
+    //     }
+    // return arreglo2;
+    return datos.map((dato)=> {
+        const ataque = Number(dato.stats["base-attack"]);
+        const defensa = Number(dato.stats["base-defense"]);
+        const estamina = Number(dato.stats["base-stamina"]);
+
+        let datoSuma = (ataque + defensa + estamina);
+        dato["baseSuma"] = datoSuma.toFixed();
+        let datoProm = (ataque + defensa + estamina)/3;
+        let datoDesviacion = (((ataque - datoProm)**2 + (defensa - datoProm)**2 + (estamina-datoProm)**2)/2)**(1/2);
+        
+        dato["baseDesviacion"] = datoDesviacion.toFixed(3);
+        if (dato["baseDesviacion"].length < 6){
+            dato["baseDesviacion"] = "0"+ dato["baseDesviacion"];
         }
-    return arreglo2;
+        dato["baseProm"] = datoProm.toFixed();
+        if (dato["baseProm"].length < 3){
+            dato["baseProm"] = "0"+ dato["baseProm"];
+        }
+    
+
+        return dato;
+
+
+    });
 };
 
 export const calcularProm = (datos) => {
@@ -73,8 +97,11 @@ export const ordenarFiltrar = (datos, tipo, order) => {
         definitivo = ordenarPokemon(definitivo, order, "asc");
     }
 
-    if (order === "spawn-chance") {
+    if (order === "baseDesviacion") {
        definitivo = ordenarPokemon(definitivo, order, "asc");
+    }
+    if (order === "baseProm") {
+        definitivo = ordenarPokemon(definitivo, order, "desc");
     }
 
     return definitivo;
