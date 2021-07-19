@@ -1,9 +1,9 @@
-import { example, calculoEstadistico, filtrarRegion, ordenarFiltrar } from './data.js';
+import { calculoEstadistico, filtrarRegion, ordenarFiltrar } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 const dataPoke = calculoEstadistico(data.pokemon);
 //const dataPoke = data.pokemon;
-console.log(example, dataPoke);
+console.log(dataPoke);
 //console.log(calcularSuma(data.pokemon));
 
 
