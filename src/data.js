@@ -5,8 +5,8 @@ export const calculoEstadistico = (datos) => {
         const defensa = Number(dato.stats["base-defense"]);
         const estamina = Number(dato.stats["base-stamina"]);
 
-        let datoSuma = (ataque + defensa + estamina);
-        dato["baseSuma"] = datoSuma.toFixed();
+        // let datoSuma = (ataque + defensa + estamina);
+        // dato["baseSuma"] = datoSuma.toFixed();
         let datoProm = (ataque + defensa + estamina) / 3;
         let datoDesviacion = (((ataque - datoProm) ** 2 + (defensa - datoProm) ** 2 + (estamina - datoProm) ** 2) / 2) ** (1 / 2);
 
