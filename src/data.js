@@ -10,7 +10,18 @@ export const anotherExample = () => {
 
 export const calcularSuma = (datos) => {
 
-        const ataque = datos.map((dato)=> {
+    return datos.map((dato) => {
+        const ataque = Number(dato.stats['base-attack']);
+        const defensa = Number(dato.stats['base-defense']);
+        const estamina = Number(dato.stats['base-stamina']);
+
+        dato.baseSuma = (ataque + defensa + estamina);
+        dato.baseProm = dato.baseSuma / 3;
+
+        return dato;
+    });
+
+    /* const ataque = datos.map((dato)=> {
             return dato.stats["base-attack"]
         });
         const defensa = datos.map((dato)=> {
@@ -30,33 +41,33 @@ export const calcularSuma = (datos) => {
             }
     
         }
-    return arreglo2;
+    return arreglo2;*/
 };
 
 export const calcularProm = (datos) => {
 
-    const ataque = datos.map((dato)=> {
+    const ataque = datos.map((dato) => {
         return dato.stats["base-attack"]
     });
-    const defensa = datos.map((dato)=> {
-     return dato.stats["base-defense"]
+    const defensa = datos.map((dato) => {
+        return dato.stats["base-defense"]
     });
-    const estamina = datos.map((dato)=> {
-     return dato.stats["base-stamina"]
+    const estamina = datos.map((dato) => {
+        return dato.stats["base-stamina"]
     });
 
     let arreglo1 = [ataque, defensa, estamina];
-    let arreglo2=[];
-    
-    for (let i=0; i < arreglo1.length; i++){
-        for (let j=0; j < arreglo1[i].length +1; j++){
-            let prom = (parseInt(arreglo1[0][j], 10)+parseInt(arreglo1[1][j], 10)+parseInt(arreglo1[2][j], 10))/3;
-        
-            arreglo2[j]=prom.toFixed();
+    let arreglo2 = [];
+
+    for (let i = 0; i < arreglo1.length; i++) {
+        for (let j = 0; j < arreglo1[i].length + 1; j++) {
+            let prom = (parseInt(arreglo1[0][j], 10) + parseInt(arreglo1[1][j], 10) + parseInt(arreglo1[2][j], 10)) / 3;
+
+            arreglo2[j] = prom.toFixed();
         }
 
     }
-return arreglo2;
+    return arreglo2;
 };
 
 export const ordenarFiltrar = (datos, tipo, order) => {
@@ -69,12 +80,12 @@ export const ordenarFiltrar = (datos, tipo, order) => {
         definitivo = filtrarTipo(datos, tipo);
     }
 
-    if (order !== "" ) {
+    if (order !== "") {
         definitivo = ordenarPokemon(definitivo, order, "asc");
     }
 
     if (order === "spawn-chance") {
-       definitivo = ordenarPokemon(definitivo, order, "asc");
+        definitivo = ordenarPokemon(definitivo, order, "asc");
     }
 
     return definitivo;

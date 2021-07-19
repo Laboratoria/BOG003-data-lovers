@@ -3,7 +3,7 @@ import data from './data/pokemon/pokemon.js';
 
 const dataPoke = data.pokemon;
 console.log(example, dataPoke);
-//console.log(calcularSuma(data.pokemon));
+console.log(calcularSuma(data.pokemon));
 
 console.log(calcularProm(dataPoke));
 
@@ -27,7 +27,7 @@ const paginaListado = (region) => {
     if (region === "johto") {
         let pokemonJohto = filtrarRegion(dataPoke, "johto");
         template(pokemonJohto);
-        
+
 
         document.getElementById("tipo").addEventListener("change", () => {
             const tipo = document.getElementById("tipo").value;
@@ -63,7 +63,7 @@ const paginaListado = (region) => {
         })
     }
 
-        
+
     if (region === "ambos") {
         template(dataPoke);
 
@@ -78,7 +78,7 @@ const paginaListado = (region) => {
             const tipo = document.getElementById("tipo").value;
             const order = document.getElementById("orden").value;
 
-            template(ordenarFiltrar(dataPoke, tipo, order));   
+            template(ordenarFiltrar(dataPoke, tipo, order));
         })
     }
 }
@@ -86,7 +86,7 @@ const paginaListado = (region) => {
 const template = (list) => {
     let listaPokemon = "";
     list.forEach((dataPoke) => {
-        const card = ` 
+        const tarjetas = ` 
         <div class="tarjetaPokemon">
             <div class="tarjetaIndividual">
                 <h3 class="pokeNum"> #${dataPoke.num}</h3>
@@ -96,11 +96,13 @@ const template = (list) => {
         
         </div>`
 
-        listaPokemon += card;
-    
+        listaPokemon += tarjetas;
+
     });
     document.getElementById("listadoPokemon").innerHTML = listaPokemon;
-}
+};
+
+template(dataPoke)
 
 const botonJohto = document.getElementById("johto");
 botonJohto.addEventListener("click", () => paginaListado("johto"));
