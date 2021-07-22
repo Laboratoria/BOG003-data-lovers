@@ -80,9 +80,11 @@ const paginaListado = (region) => {
     }
 }
 
-const template = (list) => {
+
+
+const template = (listData) => {
     let listaPokemon = "";
-    list.forEach((dataPoke) => {
+    listData.forEach((dataPoke) => {
         const tarjetas = ` 
         <div class="tarjetaPokemon">
             <div class="tarjetaIndividual">
@@ -91,15 +93,18 @@ const template = (list) => {
                 <img class="pokeImg" src='${dataPoke.img}'>
             </div>
         
-        </div>`
+        </div>`;
+
 
         listaPokemon += tarjetas;
 
     });
     document.getElementById("listadoPokemon").innerHTML = listaPokemon;
+
+
 };
 
-template(dataPoke)
+template(dataPoke);
 
 const botonJohto = document.getElementById("johto");
 botonJohto.addEventListener("click", () => paginaListado("johto"));
