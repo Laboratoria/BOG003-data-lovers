@@ -142,23 +142,30 @@ const template = (dataPoke) => {
         let tarjetaPokemon = document.createElement("div");
         tarjetaPokemon.setAttribute("class", "tarjetaPokemon");
         tarjetaPokemon.setAttribute("id", `${poke.num}`);
-        tarjetaPokemon.addEventListener("click", () => modal(dataPoke));
+        tarjetaPokemon.addEventListener("click", () => limpiarTarjeta(dataPoke));
+        tarjetaPokemon.addEventListener("click", () => modal(poke));
+        //console.log(tarjetaPokemon)
 
         let tarjetaIndividual = document.createElement("div");
         tarjetaIndividual.setAttribute("class", "tarjetaIndividual");
         tarjetaIndividual.setAttribute("id", "tarjetaIndividual");
+        //console.log(tarjetaIndividual)
+
 
         let numeroPoke = document.createElement("h3");
         numeroPoke.setAttribute("class", "pokeNum");
         numeroPoke.innerHTML = `${poke.num}`;
+        //console.log(numeroPoke)
 
         let nombrePoke = document.createElement("h3");
         nombrePoke.setAttribute("class", "pokeNombre");
         nombrePoke.innerHTML = `${poke.name}`;
+        //console.log(nombrePoke)
 
         let imagenPoke = document.createElement("img");
         imagenPoke.setAttribute("class", "pokeimg");
         imagenPoke.setAttribute("src", `${poke.img}`);
+        //console.log(imagenPoke)
 
         tarjetaPokemon.appendChild(tarjetaIndividual);
         tarjetaIndividual.appendChild(numeroPoke);
@@ -197,47 +204,57 @@ const limpiarTarjeta = (dataPoke) => {
 
 
 
-const modal = (dataPoke) => {
+const modal = (poke) => {
 
-    for (let poke of dataPoke) {
+    const divModal = document.getElementById("modal");
+    const contenidoModal = document.createElement("div");
+    contenidoModal.classList.add("content");
+    contenidoModal.setAttribute("id", `${poke}`);
+    contenidoModal.setAttribute("hiden", "");
+    divModal.appendChild(contenidoModal);
 
-        const divModal = document.getElementById("modal");
-        const contenidoModal = document.createElement("div");
-        contenidoModal.classList.add("content");
-        contenidoModal.setAttribute("id", `${poke}`);
-        contenidoModal.setAttribute("hiden", "");
-        divModal.appendChild(contenidoModal);
+    const encabezado = document.createElement("div");
+    encabezado.classList.add("header");
+    contenidoModal.appendChild(encabezado);
 
-        const encabezado = document.createElement("div");
-        encabezado.classList.add("header");
-        contenidoModal.appendChild(encabezado);
+    const titulo = document.createElement("div");
+    titulo.classList.add("title");
+    encabezado.appendChild(titulo);
 
-        const titulo = document.createElement("div");
-        titulo.classList.add("title");
-        encabezado.appendChild(titulo);
+    const textoTitulo = document.createElement("h1");
+    textoTitulo.innerHTML = `${poke.name}`;
+    titulo.appendChild(textoTitulo);
 
-        const textoTitulo = document.createElement("h1");
-        textoTitulo.innerHTML = `${poke.name}`;
+    const ladoA = document.createElement("div");
+    titulo.classList.add("ladoA");
+    ladoA.innerHTML = "LADO A";
+    encabezado.appendChild(ladoA);
 
-        const botonCerrar = document.createElement("div");
-        botonCerrar.classList.add("close-btn");
-        botonCerrar.innerHTML = "X";
-        encabezado.appendChild(botonCerrar);
+    const ladoB = document.createElement("div");
+    titulo.classList.add("ladoB");
+    ladoB.innerHTML = "LADO B";
+    encabezado.appendChild(ladoB);
 
-        const cuerpoModal = document.createElement("div");
-        cuerpoModal.classList.add("body");
-        cuerpoModal.setAttribute("id", "modal-body");
-        cuerpoModal.innerHTML = `<img src = "${poke.img}">`
-        contenidoModal.appendChild(cuerpoModal);
 
-        divModal.style.display = "block";
+    const botonCerrar = document.createElement("div");
+    botonCerrar.classList.add("close-btn");
+    botonCerrar.innerHTML = "X";
+    encabezado.appendChild(botonCerrar);
 
-        botonCerrar.addEventListener("click", () => {
-            document.getElementById("modal").style.display = "none";
-        })
+    const cuerpoModal = document.createElement("div");
+    cuerpoModal.classList.add("body");
+    cuerpoModal.setAttribute("id", "modal-body");
+    cuerpoModal.innerHTML = `<img src = "${poke.img}">`
+    contenidoModal.appendChild(cuerpoModal);
 
-        botonCerrar.addEventListener("click", () => limpiarTarjeta(dataPoke));
-    }
+    divModal.style.display = "block";
+
+
+    botonCerrar.addEventListener("click", () => {
+        document.getElementById("modal").style.display = "none";
+    })
+
+
 
 
 }
