@@ -41,7 +41,7 @@
       align-items: center
   }
   
-  .contenido2 {
+  #contenido2 {
       background-color: #ECFAFB;
       border: 5px solid #000000;
       box-sizing: border-box;

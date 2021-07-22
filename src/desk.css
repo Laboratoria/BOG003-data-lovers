@@ -41,7 +41,7 @@ body {
     align-items: center
 }
 
-.contenido2 {
+#contenido2 {
     background-color: #ECFAFB;
     border: 5px solid #000000;
     box-sizing: border-box;
@@ -258,3 +258,5 @@ select:hover {
     height: 18vh;
     margin-top: 8vh;
 }
+
+ 
