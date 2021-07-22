@@ -19,7 +19,7 @@ const paginaListado = (region) => {
 
     pagBienvenida.style.display = "none";
     pagListado.style.display = "block";
-    
+
 
     if (region === "johto") {
         let pokemonJohto = filtrarRegion(dataPoke, "johto");
@@ -33,7 +33,7 @@ const paginaListado = (region) => {
 
             limpiarPokemon(dataPoke);
             template(ordenarFiltrar(pokemonJohto, tipo, order));
-            
+
         });
 
         document.getElementById("orden").addEventListener("change", () => {
@@ -96,8 +96,8 @@ const paginaListado = (region) => {
 
 
 
-    
-    
+
+
 
 
 /*const template = (list) => {
@@ -138,10 +138,11 @@ const template = (listData) => {
 const template = (dataPoke) => {
     for (let poke of dataPoke) {
 
-        
+
         let tarjetaPokemon = document.createElement("div");
         tarjetaPokemon.setAttribute("class", "tarjetaPokemon");
-        tarjetaPokemon.setAttribute("id", `${poke.num}`)
+        tarjetaPokemon.setAttribute("id", `${poke.num}`);
+        tarjetaPokemon.addEventListener("click", () => modal(dataPoke));
 
         let tarjetaIndividual = document.createElement("div");
         tarjetaIndividual.setAttribute("class", "tarjetaIndividual");
@@ -149,15 +150,15 @@ const template = (dataPoke) => {
 
         let numeroPoke = document.createElement("h3");
         numeroPoke.setAttribute("class", "pokeNum");
-        numeroPoke.innerHTML=`${poke.num}`;
+        numeroPoke.innerHTML = `${poke.num}`;
 
         let nombrePoke = document.createElement("h3");
         nombrePoke.setAttribute("class", "pokeNombre");
-        nombrePoke.innerHTML=`${poke.name}`;
+        nombrePoke.innerHTML = `${poke.name}`;
 
         let imagenPoke = document.createElement("img");
         imagenPoke.setAttribute("class", "pokeimg");
-        imagenPoke.setAttribute("src",`${poke.img}`);
+        imagenPoke.setAttribute("src", `${poke.img}`);
 
         tarjetaPokemon.appendChild(tarjetaIndividual);
         tarjetaIndividual.appendChild(numeroPoke);
@@ -166,40 +167,81 @@ const template = (dataPoke) => {
 
         let contenidoPoke = document.getElementById("listadoPokemon");
         contenidoPoke.appendChild(tarjetaPokemon);
-        
+
     }
 }
 
 const limpiarPokemon = (dataPoke) => {
-    
-    for (let poke of dataPoke){
+
+    for (let poke of dataPoke) {
 
         let tarjetaPokemon = document.getElementById(`${poke.num}`);
-        if (tarjetaPokemon !== null){
+        if (tarjetaPokemon !== null) {
             tarjetaPokemon.remove();
         }
-        
+
     }
-    // let tarjetaPokemon = document.getElementById("tarjetaPokemon");
-    // tarjetaPokemon.remove();
-    
-    //let contenido2 = document.getElementById("contenido2");
+}
 
+const limpiarTarjeta = (dataPoke) => {
 
-    
+    for (let poke of dataPoke) {
 
-    
-    
-    
-    
+        let contenidoModal = document.getElementById(`${poke}`);
+        if (contenidoModal !== null) {
+            contenidoModal.remove();
+        }
+
+    }
 }
 
 
-//template(dataPoke);
+
+const modal = (dataPoke) => {
+
+    for (let poke of dataPoke) {
+
+        const divModal = document.getElementById("modal");
+        const contenidoModal = document.createElement("div");
+        contenidoModal.classList.add("content");
+        contenidoModal.setAttribute("id", `${poke}`);
+        contenidoModal.setAttribute("hiden", "");
+        divModal.appendChild(contenidoModal);
+
+        const encabezado = document.createElement("div");
+        encabezado.classList.add("header");
+        contenidoModal.appendChild(encabezado);
+
+        const titulo = document.createElement("div");
+        titulo.classList.add("title");
+        encabezado.appendChild(titulo);
+
+        const textoTitulo = document.createElement("h1");
+        textoTitulo.innerHTML = `${poke.name}`;
+
+        const botonCerrar = document.createElement("div");
+        botonCerrar.classList.add("close-btn");
+        botonCerrar.innerHTML = "X";
+        encabezado.appendChild(botonCerrar);
+
+        const cuerpoModal = document.createElement("div");
+        cuerpoModal.classList.add("body");
+        cuerpoModal.setAttribute("id", "modal-body");
+        cuerpoModal.innerHTML = `<img src = "${poke.img}">`
+        contenidoModal.appendChild(cuerpoModal);
+
+        divModal.style.display = "block";
+
+        botonCerrar.addEventListener("click", () => {
+            document.getElementById("modal").style.display = "none";
+        })
+
+        botonCerrar.addEventListener("click", () => limpiarTarjeta(dataPoke));
+    }
 
 
+}
 
-};
 
 template(dataPoke);
 

@@ -215,7 +215,7 @@
       margin-top: 3vh;
   }
   
-  .modal {
+  #modal {
       font-family: 'Press Start 2P', serif;
       position: absolute;
       width: 100%;
@@ -225,7 +225,7 @@
       left: 0;
   }
   
-  .modal .content {
+  #modal .content {
       margin: 7%;
       background-color: white;
       height: 92vh;
@@ -234,7 +234,7 @@
       flex-direction: column;
   }
   
-  .modal .content .header {
+  #modal .content .header {
       padding: 10px;
       display: flex;
       flex-shrink: 0;
@@ -243,15 +243,15 @@
       border-bottom: 1px solid black;
   }
   
-  .modal .content .header .title {
+  #modal .content .header .title {
       padding-right: 10px;
   }
   
-  .modal .content .header h1 {
+  #modal .content .header h1 {
       font-size: 12px;
   }
   
-  .modal .content .header .close-btn {
+  #modal .content .header #close-btn {
       cursor: pointer;
       background-color: red;
       border-radius: 50%;
@@ -259,7 +259,7 @@
       text-align: center;
   }
   
-  .modal .content .body {
+  #modal .content .body {
       font-size: 12px;
       overflow: auto;
       padding: 10px;
