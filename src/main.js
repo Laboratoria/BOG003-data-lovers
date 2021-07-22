@@ -90,6 +90,7 @@ const paginaListado = (region) => {
         })
     }
 
+
 };
 
 
@@ -104,6 +105,14 @@ const paginaListado = (region) => {
     list.forEach((dataPoke) => {
         const tarjetas = 
         ` 
+
+
+
+const template = (listData) => {
+    let listaPokemon = "";
+    listData.forEach((dataPoke) => {
+        const tarjetas = ` 
+
         <div class="tarjetaPokemon">
             <div class="tarjetaIndividual" id="tarjetaIndividual">
                 <h3 class="pokeNum"> #${dataPoke.num}</h3>
@@ -112,7 +121,8 @@ const paginaListado = (region) => {
                 <button class="ver" id="myBtn">más</button>
             </div>
         
-        </div>`
+        </div>`;
+
 
 
     
@@ -189,6 +199,9 @@ const limpiarPokemon = (dataPoke) => {
 
 
 
+};
+
+template(dataPoke);
 
 const botonJohto = document.getElementById("johto");
 botonJohto.addEventListener("click", () => paginaListado("johto"));
