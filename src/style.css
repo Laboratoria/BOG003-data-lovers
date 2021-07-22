@@ -216,22 +216,28 @@
   }
   
   #modal {
+      display: none;
       font-family: 'Press Start 2P', serif;
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
       top: 0;
       left: 0;
+      z-index: 1;
+      padding-top: 100px;
+      overflow: auto;
   }
   
   #modal .content {
-      margin: 7%;
+      margin: auto;
       background-color: white;
       height: 92vh;
       border-radius: 20px;
       display: flex;
       flex-direction: column;
+      padding: 20px;
+      width: 80%;
   }
   
   #modal .content .header {
