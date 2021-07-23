@@ -230,14 +230,18 @@
   }
   
   #modal .content {
-      margin: auto;
-      background-color: white;
-      height: 92vh;
-      border-radius: 20px;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      width: 80%;
+    margin: auto;
+      /*background-color: white;*/
+    height: 92vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 80%;
+    background: linear-gradient(180deg, #DFF7E4 0%, #B9E7C3 32.81%, #88D799 68.23%, #1B8532 100%);
+    border: 1px solid #456D36;
+    box-sizing: border-box;
+    
   }
   
   #modal .content .header {
