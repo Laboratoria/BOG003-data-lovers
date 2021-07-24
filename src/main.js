@@ -25,6 +25,7 @@ const paginaListado = (region) => {
         let pokemonJohto = filtrarRegion(dataPoke, "johto");
         limpiarPokemon(dataPoke);
         template(pokemonJohto);
+        
 
 
         document.getElementById("tipo").addEventListener("change", () => {
@@ -220,9 +221,14 @@ const modal = (poke) => {
         botonCerrar.innerHTML = `<img src="img/closebutton.png"> `;
         encabezado.appendChild(botonCerrar);
 
+        const botonRotarB = document.createElement("div");
+        botonRotarB.classList.add("rotar-btnB");
+        botonRotarB.innerHTML = `Lado A`;
+        encabezado.appendChild(botonRotarB);
+
         const botonRotar = document.createElement("div");
         botonRotar.classList.add("rotar-btn");
-        botonRotar.innerHTML = `<img src="img/rotarboton.png"> `;
+        botonRotar.innerHTML = `Lado B`;
         encabezado.appendChild(botonRotar);
 
         const cuerpoModalA = document.createElement("div");
@@ -277,30 +283,10 @@ const modal = (poke) => {
         peso.textContent = "Weight:" +poke.size.weight;
         medidas.appendChild(peso);
 
-        //Lado B
-
-        const contenidoModalB = document.createElement("div");
-        contenidoModalB.classList.add("content");
-        contenidoModalB.setAttribute("id", `${poke}`);
-        contenidoModalB.setAttribute("hiden", "");
-        divModal.appendChild(contenidoModalB);
-
-        const encabezadoB = document.createElement("div");
-        encabezadoB.classList.add("header");
-        contenidoModalB.appendChild(encabezadoB);
-
-        const botonCerrarB = document.createElement("div");
-        botonCerrarB.classList.add("close-btn");
-        botonCerrarB.innerHTML = `<img src="img/closebutton.png"> `;
-        encabezadoB.appendChild(botonCerrarB);
-
-        const botonRotarB = document.createElement("div");
-        botonRotarB.classList.add("rotar-btn");
-        botonRotarB.innerHTML = `<img src="img/rotarboton.png"> `;
-        encabezadoB.appendChild(botonRotarB);
-
+        //LadoB
         const cuerpoModalB = document.createElement("div");
-        cuerpoModalB.classList.add("body");
+        cuerpoModalB.classList.add("bodyB");
+        cuerpoModalB.setAttribute("hidden","");
         cuerpoModalB.setAttribute("id", "modal-body");
 
         const tituloB = document.createElement("div");
@@ -315,7 +301,7 @@ const modal = (poke) => {
         const estadisticos = document.createElement("div");
         estadisticos.classList.add("estadisticos");
         cuerpoModalB.appendChild(estadisticos);
-        contenidoModalB.appendChild(cuerpoModalB);
+        contenidoModal.appendChild(cuerpoModalB);
 
          
         const ataque = document.createElement("h3");
@@ -329,10 +315,6 @@ const modal = (poke) => {
         const estamina = document.createElement("h3");
         estamina.textContent = "Stamina:"+poke.stats["base-stamina"];
         estadisticos.appendChild(estamina);
-
-        // const promedio = document.createElement("h3");
-        // promedio.textContent = "Promedio base:"+poke.stats["baseProm"];
-        // estadisticos.appendChild(promedio);
 
         const cpMax = document.createElement("h3");
         cpMax.textContent = "Max-CP:"+poke.stats["max-cp"];
@@ -368,8 +350,62 @@ const modal = (poke) => {
             const imagenDebilidades = document.createElement("img");
             imagenDebilidades.src = "img/"+e+".gif";
             debilidades.appendChild(imagenDebilidades);
-        });
+        }); 
 
+        const evoluciones = document.createElement("div");
+        evoluciones.classList.add("evoluciones");
+
+        const divPrevolucion = document.createElement("div");
+        divPrevolucion.textContent="Pre-evolution";
+        const prevolucionImagen = document.createElement("img");
+        //const prevolucion2Imagen = document.createElement("img");
+        divPrevolucion.appendChild(prevolucionImagen);
+        //const divPrevolucion2 = document.createElement("div");
+        //divPrevolucion2.appendChild(prevolucion2Imagen);
+        const divEvolucion = document.createElement("div");
+        divEvolucion.textContent = "Next-Evolution";
+        //const divEvolucion2 = document.createElement("div"); 
+        
+        const evolucionImagen = document.createElement("img");
+        //const evolucion2Imagen = document.createElement("img");
+        //divEvolucion2.appendChild(evolucion2Imagen);
+        divEvolucion.appendChild(evolucionImagen);
+
+        
+        evoluciones.appendChild(divPrevolucion);
+        //evoluciones.appendChild(divPrevolucion2);
+        evoluciones.appendChild(divEvolucion);
+        //evoluciones.appendChild(divEvolucion2);
+        
+        
+        if("prev-evolution" in poke.evolution) {
+            const laPrevolucion = poke.evolution["prev-evolution"][0]["num"];
+            prevolucionImagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laPrevolucion+".png";
+           
+        }
+        /*if("prev-evolution" in poke["evolution"]["prev-evolution"][0]){
+            const laPrevolucion2 = poke.evolution["prev-evolution"][0]["prev-evolution"][0]["num"];
+            prevolucion2Imagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laPrevolucion2+".png";
+        }*/
+        if ("next-evolution" in poke.evolution) {
+            const laEvolucion = poke.evolution["next-evolution"][0]["num"];
+            evolucionImagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laEvolucion+".png";
+        }
+        /*if("next-evolution" in poke["evolution"]["next-evolution"][0]){
+            const laEvolucion2 = poke.evolution["next-evolution"][0]["next-evolution"][0]["num"];
+            evolucion2Imagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laEvolucion2+".png";
+        }*/
+
+        //evolucionImagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laEvolucion+".png";
+        
+    
+        cuerpoModalB.appendChild(evoluciones);   
+        
+
+
+        //https://www.serebii.net/pokemongo/pokemon/
+
+    //Fin lado B
 
         divModal.style.display = "block";
 
@@ -378,8 +414,14 @@ const modal = (poke) => {
         })
 
         botonRotar.addEventListener("click", () => {
-            document.getElementsByClassName("content")[0].style.display = "none";
-        })
+            document.getElementsByClassName("body")[0].style.display = "none";
+            document.getElementsByClassName("bodyB")[0].style.display = "block";
+        });
+
+        botonRotarB.addEventListener("click", () => {
+            document.getElementsByClassName("body")[0].style.display = "block";
+            document.getElementsByClassName("bodyB")[0].style.display = "none";
+        });
 
         
 
