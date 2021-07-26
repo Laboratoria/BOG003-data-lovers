@@ -261,12 +261,10 @@
       font-size: 12px;
   }
   
-  #modal .content .header #close-btn {
+.cerrar-btn {
       cursor: pointer;
-      background-color: red;
-      border-radius: 50%;
-      padding: 6px 4px 4px 6px;
-      text-align: center;
+      width: 5%;
+      height: 5%;
   }
   
   #modal .content .body {
