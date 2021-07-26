@@ -158,7 +158,7 @@ const template = (dataPoke) => {
         nombrePoke.textContent = `${poke.name}`;
 
         let imagenPoke = document.createElement("img");
-        imagenPoke.setAttribute("class", "pokeimg");
+        imagenPoke.setAttribute("class", "pokeImg");
         imagenPoke.setAttribute("src", `${poke.img}`);
 
         tarjetaPokemon.appendChild(tarjetaIndividual);
@@ -212,13 +212,49 @@ const modal = (poke) => {
         contenidoModal.setAttribute("hiden", "");
         divModal.appendChild(contenidoModal);
 
+        if (poke.type[0]=== "grass"){
+            contenidoModal.setAttribute("style", "background:linear-gradient(180deg, #DFF7E4 0%, #B9E7C3 32.81%, #88D799 68.23%, #1B8532 100%);")
+        } else if(poke.type[0]=== "ghost") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #D9DAF9 0.01%, #B5BBF5 36.46%, #929BEC 65.62%, #6464E6 100%);");
+        } else if(poke.type[0]=== "dark") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #000000 0%, #3D3E3C 0.01%, #C9C9C9 36.46%, #A6A6A6 65.62%, #0D130E 100%);");
+        } else if(poke.type[0]=== "poison") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E3B1E4 0%, #F9CDFB 0.01%, #D590D7 36.46%, #CF6ED1 65.62%, #A32EA5 100%);");
+        } else if(poke.type[0]=== "bug") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #CDD86B 0%, #F7FFB9 0.01%, #D4DE77 36.46%, #B7C545 65.62%, #89970E 100%);");
+        } else if(poke.type[0]=== "dragon") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #CDD86B 0%, #F7FFB9 0.01%, #D4DE77 36.46%, #B7C545 65.62%, #89970E 100%);");
+        } else if(poke.type[0]=== "ground") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #FBEDC4 0.01%, #F1D892 36.46%, #BA9A42 65.62%, #896C1F 100%);");
+        }  else if(poke.type[0]=== "flying") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #596FCC 0%, #DFE5FF 0.01%, #B1BFFA 36.46%, #7C8CD2 65.62%, #4456A8 100%);");
+        }  else if(poke.type[0]=== "electric") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #FFE797 1.04%, #FFDB7B 30.21%, #FEC11E 66.15%, #DFA20D 98.96%);");
+        } else if(poke.type[0]=== "rock") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #EDD493 0%, #3A2F12 0.01%, #AD9043 36.46%, #95782D 65.62%, #201B0D 100%);");
+        } else if(poke.type[0]=== "normal") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #D3D3D0 0%, rgba(237, 237, 237, 0.77823) 0.01%, #CACAC2 36.46%, #ABAAA1 65.62%, #757370 100%);");
+        } else if(poke.type[0]=== "steel") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #D5D5D9 0%, #C4C4C4 0.01%, #96979D 36.46%, #89898C 65.62%, #3E3E40 100%);");
+        }  else if(poke.type[0]=== "fairy") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #FFFCFF 0.01%, #F7C7F7 36.46%, #E8ACE8 65.62%, #D18AD0 100%);");
+        }  else if(poke.type[0]=== "ice") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #E6FAFF 0.01%, #B6EEFB 36.46%, #96E4F5 65.62%, #6ED3F3 100%);");
+        }  else if(poke.type[0]=== "fire") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #CC2201 0%, #F3B7AC 0.01%, #D57E6E 36.46%, #CA563F 65.62%, #C11C00 100%);");
+        }  else if(poke.type[0]=== "water") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #ABD9FF 0.01%, #74BEFE 36.46%, #2A8EF0 65.62%, #386A9B 100%);");
+        }  else if(poke.type[0]=== "fighting") {
+            contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #F2D4CA 0.01%, #B47661 36.46%, #924E37 65.62%, #6A240E 100%);");
+        }
+
         const encabezado = document.createElement("div");
         encabezado.classList.add("header");
         contenidoModal.appendChild(encabezado);
 
         const botonCerrar = document.createElement("div");
-        botonCerrar.classList.add("close-btn");
-        botonCerrar.innerHTML = `<img src="img/closebutton.png"> `;
+        botonCerrar.classList.add("cerrar-btn");
+        botonCerrar.innerHTML = `<img src="img/botoncerrar.png"> `;
         encabezado.appendChild(botonCerrar);
 
         const botonRotarB = document.createElement("div");
@@ -356,55 +392,38 @@ const modal = (poke) => {
         evoluciones.classList.add("evoluciones");
 
         const divPrevolucion = document.createElement("div");
-        divPrevolucion.textContent="Pre-evolution";
         const prevolucionImagen = document.createElement("img");
-        //const prevolucion2Imagen = document.createElement("img");
-        divPrevolucion.appendChild(prevolucionImagen);
-        //const divPrevolucion2 = document.createElement("div");
-        //divPrevolucion2.appendChild(prevolucion2Imagen);
-        const divEvolucion = document.createElement("div");
-        divEvolucion.textContent = "Next-Evolution";
-        //const divEvolucion2 = document.createElement("div"); 
         
+        divPrevolucion.appendChild(prevolucionImagen);
+        
+        const divEvolucion = document.createElement("div");
         const evolucionImagen = document.createElement("img");
-        //const evolucion2Imagen = document.createElement("img");
-        //divEvolucion2.appendChild(evolucion2Imagen);
+        
         divEvolucion.appendChild(evolucionImagen);
 
-        
         evoluciones.appendChild(divPrevolucion);
-        //evoluciones.appendChild(divPrevolucion2);
         evoluciones.appendChild(divEvolucion);
-        //evoluciones.appendChild(divEvolucion2);
-        
         
         if("prev-evolution" in poke.evolution) {
+            const textoPrevolucion = document.createElement("h3");
+            textoPrevolucion.textContent="Pre-evolution";
+            divPrevolucion.insertBefore(textoPrevolucion, prevolucionImagen);
             const laPrevolucion = poke.evolution["prev-evolution"][0]["num"];
             prevolucionImagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laPrevolucion+".png";
+
            
         }
-        /*if("prev-evolution" in poke["evolution"]["prev-evolution"][0]){
-            const laPrevolucion2 = poke.evolution["prev-evolution"][0]["prev-evolution"][0]["num"];
-            prevolucion2Imagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laPrevolucion2+".png";
-        }*/
         if ("next-evolution" in poke.evolution) {
+            const textoEvolucion = document.createElement("h3");
+            textoEvolucion.textContent="Next-evolution";
+            divEvolucion.insertBefore(textoEvolucion, evolucionImagen);
             const laEvolucion = poke.evolution["next-evolution"][0]["num"];
+            //evolucionImagen.textContent = "Next-Evolution";
             evolucionImagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laEvolucion+".png";
         }
-        /*if("next-evolution" in poke["evolution"]["next-evolution"][0]){
-            const laEvolucion2 = poke.evolution["next-evolution"][0]["next-evolution"][0]["num"];
-            evolucion2Imagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laEvolucion2+".png";
-        }*/
-
-        //evolucionImagen.src = "https://www.serebii.net/pokemongo/pokemon/"+laEvolucion+".png";
         
-    
         cuerpoModalB.appendChild(evoluciones);   
         
-
-
-        //https://www.serebii.net/pokemongo/pokemon/
-
     //Fin lado B
 
         divModal.style.display = "block";
@@ -423,16 +442,12 @@ const modal = (poke) => {
             document.getElementsByClassName("bodyB")[0].style.display = "none";
         });
 
-        
-
         botonCerrar.addEventListener("click", () => limpiarTarjeta(dataPoke));
     //}
-
+    
 
 }
-// if (type[0]=== "grass"){
-//     modal.setAttribute("style", "backgrondgrass")
-// }
+    
 
 
 template(dataPoke);
