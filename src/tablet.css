@@ -222,12 +222,12 @@
 #modal .content {
   margin: auto;
     /*background-color: white;*/
-  height: 92vh;
+  height: 70vh;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  width: 80%;
+  width: 40%;
   background: linear-gradient(180deg, #DFF7E4 0%, #B9E7C3 32.81%, #88D799 68.23%, #1B8532 100%);
   border: 1px solid #456D36;
   box-sizing: border-box;
@@ -247,20 +247,144 @@
     padding-right: 10px;
 }
 
+.imagenBtnCerrar {
+    cursor: pointer;
+    padding: 6px 4px 4px 6px;
+    
+    width:5vh;
+    height: 5vh;
+
+    
+}
+
+.rotar-btn, .rotar-btnB {
+    padding-top: 10px;
+    color: black;
+    cursor: pointer;
+    border-left: solid 3px;
+    border-right: solid;
+    height: 4vh;
+
+ }
+
 #modal .content .header h1 {
     font-size: 12px;
 }
 
-#modal .content .header #close-btn {
-    cursor: pointer;
-    background-color: red;
-    border-radius: 50%;
-    padding: 6px 4px 4px 6px;
-    text-align: center;
+.numeroPoke{
+    padding-right: 15px;
 }
 
 #modal .content .body {
     font-size: 12px;
     overflow: auto;
     padding: 10px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.titleB{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 10px;
+    padding-top: 2vh;
+}
+.numeroPoke{
+    padding-right: 15px;
+}
+
+.marco{
+    /* background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg); */
+    /* background-image: url(https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg); */
+    border: solid black 5px;
+    display: flex;
+    justify-content: center;
+    /* background-position: center; */
+    margin-top: 3vh;
+}
+
+.imagenPokemonTarjeta{
+    justify-self: center;
+    /* margin-left: 70px; */
+}
+.tipos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    padding-bottom: 2vh;
+    border-bottom: solid black 3px;
+}
+ .imagenTipo{
+    width: 60px;
+    height: 30px;
+}
+
+.descripcion{
+    text-align: center;
+    margin-bottom: 2vh;
+    padding-bottom: 2vh;
+    border-bottom: solid black 3px;
+}
+.medidas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.talla{
+    border-right:solid black 3px;
+    /*padding-right: 2vh; */
+    font-size: 20px;
+}
+.peso{
+
+    font-size: 20px;
+}
+
+.estadisticos{
+    background-color: white;
+    border: solid black 3px;
+    text-align: center;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    margin-top: 2vh;
+    line-height:18px;
+}
+.resistenciaTitulo, .debilidadTitulo{
+    margin-top: 2vh;
+    text-align: center;
+}
+.resistencias, .debilidades{
+    background-color: white;
+    border: solid black 3px;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    margin-top: 2vh;
+    display:flex;
+    justify-content: space-around;
+}
+.debilidades{
+    margin-bottom: 2vh;
+}
+
+.evoluciones{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.prevolucionImg, .evolucionImg{
+    width: 70px;
+    height: 75px;
+    background-color: white;
+    border: solid black 3px;
+    margin-top: 2vh;
 }
