@@ -274,16 +274,16 @@ select:hover {
 }
 
 #modal .content {
-  margin: auto;
+    margin: auto;
     /*background-color: white;*/
-  height: 70vh;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 25%;
-  border: 1px solid #070707;
-  box-sizing: border-box;
+    height: 85vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 25%;
+    border: 1px solid #070707;
+    box-sizing: border-box;
 }
 
 #modal .content .header {
@@ -306,20 +306,19 @@ select:hover {
 .imagenBtnCerrar {
     cursor: pointer;
     padding: 6px 4px 4px 6px;
-    
-    width:5vh;
+    width: 5vh;
     height: 5vh;
 }
-.rotar-btn, .rotar-btnB {
+
+.rotar-btn,
+.rotar-btnB {
     padding-top: 10px;
     color: black;
     cursor: pointer;
     border-left: solid 3px;
     border-right: solid;
     height: 4vh;
-
- }
-
+}
 
 #modal .content .body {
     font-size: 12px;
@@ -327,18 +326,18 @@ select:hover {
     padding: 10px;
 }
 
-.numeroPoke{
+.numeroPoke {
     padding-right: 15px;
 }
 
-.title{
+.title {
     display: flex;
     flex-direction: row;
     justify-content: center;
     font-size: 10px;
 }
 
-.marco{
+.marco {
     /* background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg); */
     /* background-image: url(https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg); */
     border: solid black 5px;
@@ -348,11 +347,12 @@ select:hover {
     margin-top: 3vh;
 }
 
-.imagenPokemonTarjeta{
+.imagenPokemonTarjeta {
     justify-self: center;
     /* margin-left: 70px; */
 }
-.tipos{
+
+.tipos {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -361,69 +361,87 @@ select:hover {
     padding-bottom: 2vh;
     border-bottom: solid black 3px;
 }
- .imagenTipo{
+
+.imagenTipo {
     width: 60px;
     height: 30px;
 }
 
-.descripcion{
+.descripcion {
     text-align: center;
     margin-bottom: 2vh;
     padding-bottom: 2vh;
     border-bottom: solid black 3px;
 }
-.medidas{
+
+.medidas {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.talla{
-    border-right:solid black 3px;
+
+.talla {
+    border-right: solid black 3px;
     /*padding-right: 2vh; */
     font-size: 20px;
 }
-.peso{
 
+.peso {
     font-size: 20px;
 }
 
-.estadisticos{
+.estadisticos {
     background-color: white;
     border: solid black 3px;
     text-align: center;
     padding-bottom: 2vh;
     padding-top: 2vh;
     margin-top: 2vh;
-    line-height:18px;
+    line-height: 18px;
 }
-.resistenciaTitulo, .debilidadTitulo{
+
+.resistenciaTitulo,
+.debilidadTitulo {
     margin-top: 2vh;
     text-align: center;
 }
-.resistencias, .debilidades{
+
+.resistencias,
+.debilidades {
     background-color: white;
     border: solid black 3px;
     padding-bottom: 2vh;
     padding-top: 2vh;
     margin-top: 2vh;
-    display:flex;
+    display: flex;
     justify-content: space-around;
 }
-.debilidades{
+
+.debilidades {
     margin-bottom: 2vh;
 }
 
-.evoluciones{
-    display:flex;
+.evoluciones {
+    display: flex;
     flex-direction: row;
     justify-content: center;
     text-align: center;
 }
 
-.prevolucionImg, .evolucionImg{
+.prevolucionImg,
+.evolucionImg {
     width: 70px;
     height: 75px;
     background-color: white;
     border: solid black 3px;
     margin-top: 2vh;
+}
+
+.tallaTitulo,
+.pesoTitulo {
+    width: 20vh;
+    font-size: 12px;
+    padding-left: 0;
+    margin-top: 0;
+    line-height: 31px;
 }
