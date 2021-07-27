@@ -6,11 +6,16 @@ disqus: hackmd
 ![](https://i.imgur.com/crecFyB.png)
 
 
-## Table of Contents
+* [1. Resumen del proyecto:](https://github.com/LorraineGelis/BOG003-data-lovers#1-resumen-del-proyecto-)📑
+* [2. Descripción del proyecto:](https://github.com/LorraineGelis/BOG003-data-lovers#2-descripci%C3%B3n-del-proyecto-)📝
+* [3. Investigación UX](https://github.com/LorraineGelis/BOG003-data-lovers#3-investigaci%C3%B3n-ux-%EF%B8%8F)🕵
+* [4. Aspectos generales](https://github.com/LorraineGelis/BOG003-data-lovers#4--aspectos-generales-)📎
+* [5. Pruebas unitarias](https://github.com/LorraineGelis/BOG003-data-lovers#5-pruebas-unitarias-)💯
+* [6. Recursos](https://github.com/LorraineGelis/BOG003-data-lovers#6-recursos-)💬📚
 
-[TOC]
+***
 
-## 1. Resumen del proyecto: 📑
+## 1. Resumen del proyecto: 📑 
 
 
 Este proyecto tiene la finalidad de realizar una página web responsive, en donde nuestros usuarios potenciales tendrán la oportunidad de interactuar, filtrando y ordenando, desde una base de datos externa. A su vez, la data cuenta con la información completa de los 251 Pokémon de las regiones Kanto y Johto. Por ende, se importará y extraerá todos los datos requeridos, para cubrir las necesidades de los usuarios.
