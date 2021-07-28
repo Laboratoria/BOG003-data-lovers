@@ -3,24 +3,25 @@ import data from './data/pokemon/pokemon.js';
 
 const dataPoke = calculoEstadistico(data.pokemon);
 
+//Esta función nos muestra la pantalla de bienvenida y nos oculta pagina listado.
 const bienvenida = () => {
-    let pagBienvenida = document.getElementById("bienvenida");
-    let pagListado = document.getElementById("pagListado");
+        let pagBienvenida = document.getElementById("bienvenida");
+        let pagListado = document.getElementById("pagListado");
 
-    pagBienvenida.style.display = "block";
-    pagListado.style.display = "none";
-}
-
+        pagBienvenida.style.display = "block";
+        pagListado.style.display = "none";
+    }
+    //Esta funcion nos muestra la pantalla de pagina listado pokemon y nos oculta pagina bienvenida.
 const paginaListado = (region) => {
 
     let pagBienvenida = document.getElementById("bienvenida");
     let pagListado = document.getElementById("pagListado");
-    //const dataPoke = data.pokemon;
 
     pagBienvenida.style.display = "none";
     pagListado.style.display = "block";
 
-
+    /*En este bloque de código filtramos por region (johto, kanto y ambas).
+    Despues se filtra por tipo y posteriormente se ordena el listado de pokemon que se despliega*/
     if (region === "johto") {
         let pokemonJohto = filtrarRegion(dataPoke, "johto");
         limpiarPokemon(dataPoke);
@@ -94,96 +95,55 @@ const paginaListado = (region) => {
 
 };
 
-
-
-
-
-
-
-
-/*const template = (list) => {
-    let listaPokemon = "";
-    list.forEach((dataPoke) => {
-        const tarjetas = 
-        ` 
-
-
-
-const template = (listData) => {
-    let listaPokemon = "";
-    listData.forEach((dataPoke) => {
-        const tarjetas = ` 
-
-        <div class="tarjetaPokemon">
-            <div class="tarjetaIndividual" id="tarjetaIndividual">
-                <h3 class="pokeNum"> #${dataPoke.num}</h3>
-                <h3 class="pokeNombre"> ${dataPoke.name}</h3>
-                <img class="pokeImg" src='${dataPoke.img}'>
-                <button class="ver" id="myBtn">más</button>
-            </div>
-        
-        </div>`;
-
-
-
-    
-
-
-    });
-
-    document.getElementById("listadoPokemon").innerHTML = listaPokemon;
-
-   
-};   */
-
+/*En este bloque de codigo renderizamos las tarjetas pokemon, con su número, nombre e imagen
+A su vez, se realiza un evento click para llamar a la tarjeta informativa (Modal) */
 const template = (dataPoke) => {
-    for (let poke of dataPoke) {
-
-
-        let tarjetaPokemon = document.createElement("div");
-        tarjetaPokemon.setAttribute("class", "tarjetaPokemon");
-        tarjetaPokemon.setAttribute("id", `${poke.num}`);
-        tarjetaPokemon.addEventListener("click", () => modal(poke));
-
-        let tarjetaIndividual = document.createElement("div");
-        tarjetaIndividual.setAttribute("class", "tarjetaIndividual");
-        tarjetaIndividual.setAttribute("id", "tarjetaIndividual");
-
-        let numeroPoke = document.createElement("h3");
-        numeroPoke.setAttribute("class", "pokeNum");
-        numeroPoke.textContent = `${poke.num}`;
-
-        let nombrePoke = document.createElement("h3");
-        nombrePoke.setAttribute("class", "pokeNombre");
-        nombrePoke.textContent = `${poke.name}`;
-
-        let imagenPoke = document.createElement("img");
-        imagenPoke.setAttribute("class", "pokeImg");
-        imagenPoke.setAttribute("src", `${poke.img}`);
-
-        tarjetaPokemon.appendChild(tarjetaIndividual);
-        tarjetaIndividual.appendChild(numeroPoke);
-        tarjetaIndividual.appendChild(nombrePoke);
-        tarjetaIndividual.appendChild(imagenPoke);
-
-        let contenidoPoke = document.getElementById("listadoPokemon");
-        contenidoPoke.appendChild(tarjetaPokemon);
-
-    }
-}
-
-const limpiarPokemon = (dataPoke) => {
-
         for (let poke of dataPoke) {
 
-            let tarjetaPokemon = document.getElementById(`${poke.num}`);
-            if (tarjetaPokemon !== null) {
-                tarjetaPokemon.remove();
-            }
+
+            let tarjetaPokemon = document.createElement("div");
+            tarjetaPokemon.setAttribute("class", "tarjetaPokemon");
+            tarjetaPokemon.setAttribute("id", `${poke.num}`);
+            tarjetaPokemon.addEventListener("click", () => modal(poke));
+
+            let tarjetaIndividual = document.createElement("div");
+            tarjetaIndividual.setAttribute("class", "tarjetaIndividual");
+            tarjetaIndividual.setAttribute("id", "tarjetaIndividual");
+
+            let numeroPoke = document.createElement("h3");
+            numeroPoke.setAttribute("class", "pokeNum");
+            numeroPoke.textContent = `${poke.num}`;
+
+            let nombrePoke = document.createElement("h3");
+            nombrePoke.setAttribute("class", "pokeNombre");
+            nombrePoke.textContent = `${poke.name}`;
+
+            let imagenPoke = document.createElement("img");
+            imagenPoke.setAttribute("class", "pokeImg");
+            imagenPoke.setAttribute("src", `${poke.img}`);
+
+            tarjetaPokemon.appendChild(tarjetaIndividual);
+            tarjetaIndividual.appendChild(numeroPoke);
+            tarjetaIndividual.appendChild(nombrePoke);
+            tarjetaIndividual.appendChild(imagenPoke);
+
+            let contenidoPoke = document.getElementById("listadoPokemon");
+            contenidoPoke.appendChild(tarjetaPokemon);
 
         }
     }
-    //src =`${poke.type}`+".gif"
+    /*En este bloque de código realizamos una función para remover las tarjetas pokemon creadas */
+const limpiarPokemon = (dataPoke) => {
+
+    for (let poke of dataPoke) {
+
+        let tarjetaPokemon = document.getElementById(`${poke.num}`);
+        if (tarjetaPokemon !== null) {
+            tarjetaPokemon.remove();
+        }
+
+    }
+}
 
 const limpiarTarjeta = (dataPoke) => {
 
@@ -198,7 +158,7 @@ const limpiarTarjeta = (dataPoke) => {
 }
 
 
-
+//Modal
 const modal = (poke) => {
 
     //for (let poke of dataPoke) {
