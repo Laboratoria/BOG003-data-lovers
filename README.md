@@ -11,7 +11,7 @@ disqus: hackmd
 * [3. Investigación UX](https://github.com/LorraineGelis/BOG003-data-lovers#3-investigaci%C3%B3n-ux-%EF%B8%8F)🕵
 * [4. Aspectos generales](https://github.com/LorraineGelis/BOG003-data-lovers#4--aspectos-generales-)📎
 * [5. Pruebas unitarias](https://github.com/LorraineGelis/BOG003-data-lovers#5-pruebas-unitarias-)💯
-* [6. CheckList](https://github.com/LorraineGelis/BOG003-data-lovers#6-recursos-)💬📚
+* [6. CheckList](https://github.com/LorraineGelis/BOG003-data-lovers#6-checklist-%EF%B8%8F)✔️
 * [7. Recursos](https://github.com/LorraineGelis/BOG003-data-lovers#6-recursos-)💬📚
 
 ***
