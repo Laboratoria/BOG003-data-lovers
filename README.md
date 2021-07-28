@@ -11,7 +11,8 @@ disqus: hackmd
 * [3. Investigación UX](https://github.com/LorraineGelis/BOG003-data-lovers#3-investigaci%C3%B3n-ux-%EF%B8%8F)🕵
 * [4. Aspectos generales](https://github.com/LorraineGelis/BOG003-data-lovers#4--aspectos-generales-)📎
 * [5. Pruebas unitarias](https://github.com/LorraineGelis/BOG003-data-lovers#5-pruebas-unitarias-)💯
-* [6. Recursos](https://github.com/LorraineGelis/BOG003-data-lovers#6-recursos-)💬📚
+* [6. CheckList](https://github.com/LorraineGelis/BOG003-data-lovers#6-recursos-)💬📚
+* [7. Recursos](https://github.com/LorraineGelis/BOG003-data-lovers#6-recursos-)💬📚
 
 ***
 
@@ -275,8 +276,6 @@ Una vez definida la estética y obtenido los resultados de la encuesta, se hizo 
 Se recibió feddback muy específico como no hacer los bordes tan anchos para no desperdiciar espacio, quitar el letrero de bienvenida y cambiar la ubicación de los botones de región en la pantalla de bienvenida para mobile. 
 
 
-
-
 ### 3.4 Prototipo en Alta Fidelidad:
 
 Al recibir el feedback del prototipo de baja fidelidad, se tuvieron en cuenta y se realizaron modificaciones, incluyendo esta vez un cambio en el lenguaje.
@@ -309,9 +308,24 @@ Para las pruebas Unitarias (tests) se crearon funciones y su respectiva configur
 
 ![](https://i.imgur.com/jk9opeB.png)
 
+## 6. CheckList ✔️:
 
+- [x] Usa VanillaJS.
+- [x] Pasa linter (npm run pretest)
+- [x] Pasa tests (npm test)
+- [x] Pruebas unitarias cubren un mínimo del 70% de statements, functions y lines y branches.
+- [x] Incluye Definición del producto clara e informativa en README.md.
+- [x] Incluye historias de usuario en README.md.
+- [x] Incluye sketch de la solución (prototipo de baja fidelidad) en README.md.
+- [x] Incluye Diseño de la Interfaz de Usuario (prototipo de alta fidelidad) en README.md.
+- [ ] Incluye link a Zeplin en README.md.
+- [ ] Incluye el listado de problemas que detectaste a través de tests de usabilidad en el README.md.
+- [x] UI: Muestra lista y/o tabla con datos y/o indicadores.
+- [x] UI: Permite ordenar data por uno o más campos (asc y desc).
+- [x] UI: Permite filtrar data en base a una condición.
+- [x] UI: Es responsive.
 
-## 6. Recursos 💬📚:
+## 7. Recursos 💬📚:
 
 * https://www.youtube.com/watch?v=ky6wFiF5vMk&t=344s
 * [https://docs.google.com/presentation/d/e/2PACX-1vQhx9D36NjpH-Daea-ITPUDUzNL8ZiNAprq_7b5PSUrfutk45tEtaOLz2lmd8f54_5jX1hypDM8f8SM/pub?start=false&loop=false&delayms=60000#slide=id.g5282e1a53f_1_106](https://)
