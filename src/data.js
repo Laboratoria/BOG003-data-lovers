@@ -1,4 +1,6 @@
 export const calculoEstadistico = (datos) => {
+    /* Esta función calcula el promedio y la desviación estandar de las estadísticas base para cada
+        Pokémon y los asigna como nuevas llaves a la data que retorna la función */
 
     return datos.map((dato) => {
         const ataque = Number(dato.stats["base-attack"]);
@@ -18,6 +20,8 @@ export const calculoEstadistico = (datos) => {
 };
 
 export const ordenarFiltrar = (datos, tipo, order) => {
+    /* Esta función filtra y ordena al mismo tiempo según los argumentos que se le den, 
+        llama a las funciones ordenar y filtrar según sea necesario  */
 
     let definitivo = datos;
 
@@ -42,16 +46,20 @@ export const ordenarFiltrar = (datos, tipo, order) => {
 
 }
 
-export const filtrarTipo = (datos, tipo) => {
+const filtrarTipo = (datos, tipo) => {
+    /*Esta función filtra los Pokémon segun su tipo */ 
     return datos.filter((dato) => (dato.type.includes(tipo)));
 }
 
 export const filtrarRegion = (datos, region) => {
+     /*Esta función filtra los Pokémon segun su región */ 
     return datos.filter((dato => (dato.generation.name === region)));
 }
 
 
-export const ordenarPokemon = (datos, atributo, orden) => {
+const ordenarPokemon = (datos, atributo, orden) => {
+    /* Esta función ordena los datos numéricamente o alfabéticamente
+        en orden ascendente y por promedio y desviación, descendente y ascendente, respectivamente */
 
     let ordenArreglo = datos;
 

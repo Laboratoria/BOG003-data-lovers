@@ -144,7 +144,7 @@ const limpiarPokemon = (dataPoke) => {
 
     }
 }
-
+  /* En este bloque de código realizamos una función para remover las tarjetas informativas (modal) creadas */
 const limpiarTarjeta = (dataPoke) => {
 
     for (let poke of dataPoke) {
@@ -158,20 +158,22 @@ const limpiarTarjeta = (dataPoke) => {
 }
 
 
-//Modal
+/* Este bloque de código crea elementos en el documeto correspondientes a la tarjeta informativa (modal)
+    que tiene un lado A y un lado B con características distintas */ 
 const modal = (poke) => {
 
-    //for (let poke of dataPoke) {
+
 
     const divModal = document.getElementById("modal");
 
-    //Lado A 
+    // Contenido de la tarjeta informativa 
     const contenidoModal = document.createElement("div");
     contenidoModal.classList.add("content");
     contenidoModal.setAttribute("id", `${poke}`);
     contenidoModal.setAttribute("hiden", "");
     divModal.appendChild(contenidoModal);
 
+    // Encabezado de la tarjeta
     const encabezado = document.createElement("div");
     encabezado.classList.add("header");
     contenidoModal.appendChild(encabezado);
@@ -191,6 +193,7 @@ const modal = (poke) => {
     botonRotar.innerHTML = `Side B`;
     encabezado.appendChild(botonRotar);
 
+    // Contenido lado A de la tarjeta
     const cuerpoModalA = document.createElement("div");
     cuerpoModalA.classList.add("body");
     cuerpoModalA.setAttribute("id", "modal-body");
@@ -199,6 +202,7 @@ const modal = (poke) => {
     titulo.classList.add("title");
     cuerpoModalA.appendChild(titulo);
 
+    // Nombre y número del Pokémon
     const numeroPoke = document.createElement("h1");
     numeroPoke.classList.add("numeroPoke");
     numeroPoke.textContent = `#${poke.num}`;
@@ -208,18 +212,22 @@ const modal = (poke) => {
     textoTitulo.textContent = poke.name;
     titulo.appendChild(textoTitulo);
 
+    //Imagen del Pokémon enmarcada
     const marco = document.createElement("div");
     marco.classList.add("marco");
     cuerpoModalA.appendChild(marco);
+    
     const imagen = document.createElement("img");
     imagen.classList.add("imagenPokemonTarjeta")
     imagen.src = poke.img;
     marco.appendChild(imagen);
     contenidoModal.appendChild(cuerpoModalA);
 
+    // Recuadro con tipos del Pokémon
     const tipo = document.createElement("div");
     tipo.classList.add("tipos");
-
+ 
+    // Se le asigna la etiqueta style con un background diferente según el tipo del pokémon para la tarjeta informativa
     if (poke.type[0] === "grass") {
         contenidoModal.setAttribute("style", "background:linear-gradient(180deg, #DFF7E4 0%, #B9E7C3 32.81%, #88D799 68.23%, #1B8532 100%);");
         marco.setAttribute("style", "background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg); background-position: center;");
@@ -268,7 +276,6 @@ const modal = (poke) => {
     } else if (poke.type[0] === "water") {
         contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #ABD9FF 0.01%, #74BEFE 36.46%, #2A8EF0 65.62%, #386A9B 100%);");
         marco.setAttribute("style", "background-image: url(https://media.redadn.es/imagenes/pokemon-lets-go-pikachu-nintendo-switch_323799.jpg); background-position: left;");
-
     } else if (poke.type[0] === "fighting") {
         contenidoModal.setAttribute("style", "background: linear-gradient(180deg, #E2FFE9 0%, #F2D4CA 0.01%, #B47661 36.46%, #924E37 65.62%, #6A240E 100%);");
         marco.setAttribute("style", "background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg); background-position: center;");
@@ -277,6 +284,8 @@ const modal = (poke) => {
         marco.setAttribute("style", "background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg); background-position: center;");
     }
 
+    /* Por medio de un bucle, se crean elementos en el HTML
+        y asignamos a cada tipo una imagen que será mostrada en la tarjeta informativa*/
     poke.type.forEach((pokeTipo) => {
         cuerpoModalA.appendChild(tipo);
         const imagenTipo = document.createElement("img");
@@ -284,12 +293,14 @@ const modal = (poke) => {
         imagenTipo.classList.add("imagenTipo")
         tipo.appendChild(imagenTipo);
     });
-
+ 
+    // Texto descriptivo del Pokémon
     const descripcion = document.createElement("div");
     descripcion.classList.add("descripcion");
     cuerpoModalA.appendChild(descripcion);
     descripcion.textContent = poke.about;
 
+    // Sección de medidas del Pokémon 
     const medidas = document.createElement("div");
     medidas.classList.add("medidas");
     cuerpoModalA.appendChild(medidas);
@@ -318,7 +329,8 @@ const modal = (poke) => {
     peso.appendChild(pesoTitulo);
     peso.appendChild(pesoNum);
 
-    //LadoB
+    //Contenido lado B de la tarjeta informativa
+
     const cuerpoModalB = document.createElement("div");
     cuerpoModalB.classList.add("bodyB");
     cuerpoModalB.setAttribute("hidden", "");
@@ -328,17 +340,15 @@ const modal = (poke) => {
     tituloB.classList.add("titleB");
     cuerpoModalB.appendChild(tituloB);
 
+    // Estadísticos del Pokémon (ataque, defensa, etc)
     const estadisticosTitulo = document.createElement("h3");
-
     estadisticosTitulo.textContent = "Stats";
     tituloB.appendChild(estadisticosTitulo);
 
-
-    const estadisticos = document.createElement("div");
+     const estadisticos = document.createElement("div");
     estadisticos.classList.add("estadisticos");
     cuerpoModalB.appendChild(estadisticos);
     contenidoModal.appendChild(cuerpoModalB);
-
 
     const ataque = document.createElement("h3");
     ataque.textContent = "Attack:" + poke.stats["base-attack"];
@@ -360,6 +370,7 @@ const modal = (poke) => {
     hpMax.textContent = "Max-HP:" + poke.stats["max-hp"];
     estadisticos.appendChild(hpMax);
 
+    // Recuadro de tipos a los que el Pokémon es resistente
     const resistenciaTitulo = document.createElement("h3");
     resistenciaTitulo.classList.add("resistenciaTitulo");
     resistenciaTitulo.textContent = "Resistant";
@@ -367,7 +378,8 @@ const modal = (poke) => {
 
     const resistencias = document.createElement("div");
     resistencias.classList.add("resistencias");
-
+    
+    
     poke.resistant.forEach((e) => {
         cuerpoModalB.appendChild(resistencias);
         const imagenResistencias = document.createElement("img");
@@ -375,6 +387,8 @@ const modal = (poke) => {
         imagenResistencias.classList.add("imgResistencias");
         resistencias.appendChild(imagenResistencias);
     });
+
+    // Recuadro con tipos a los que el Pokémon es vulnerable
 
     const debilidadTitulo = document.createElement("h3");
     debilidadTitulo.classList.add("debilidadTitulo");
@@ -391,6 +405,8 @@ const modal = (poke) => {
         debilidades.appendChild(imagenDebilidades);
     });
 
+
+    // Recuadros con las evoluciones anteriores y/o posteriores del Pokémon 
     const evoluciones = document.createElement("div");
     evoluciones.classList.add("evoluciones");
 
@@ -435,6 +451,7 @@ const modal = (poke) => {
 
     divModal.style.display = "block";
 
+    // Se le asignan eventos click a los botones de cerrar y cambiar de lado A y B a la tarjeta 
     botonCerrar.addEventListener("click", () => {
         document.getElementById("modal").style.display = "none";
     })
@@ -460,6 +477,8 @@ const modal = (poke) => {
 }
 
 
+
+// Se hace el llamado de funciones, ya sea directo o por medio de clicks
 
 template(dataPoke);
 
