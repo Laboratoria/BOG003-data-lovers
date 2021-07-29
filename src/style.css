@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+body{
+    background-image: url(IMG/background.png);
+    font-family: sans-serif;
+    }
+header{
+    background-color:black;
+    width: 100%;
+    background-position: center center;
+    position: absolute;
+    top: 0px; 
+}
+div#logo{
+    float: left;
+    width: 30%;
+    height: 10%;
+}
