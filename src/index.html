@@ -5,68 +5,82 @@
   <meta charset="utf-8">
   <title>Data Lovers</title>
   <link rel="stylesheet" href="style.css" />
+  <!--meta viewport tag-->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+  <!--import font-->>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <!--Insert logo-->
-    <div id="logo">
-      <img src="IMG/logo ghibli.png" alt="logo-ghibli">
-    </div>
+  <div class="flex-container">
+    <header>
+      <!--Insert logo-->
+      <div class="logo">
+        <img src="IMG/logo ghibli.png" width = "300" alt="logo-ghibli">
+      </div>
 
-    <!--Insert title-->
-    <h1>GHIBLI FANDOM</h1>
+      <!--Insert title-->
+      <h1>GHIBLI FANDOM</h1>
+    </header>
+
+    <!--Insert nav "peliculas" o "personajes"-->
     <nav>
-      <div id="menu peliculas">
-        <a href="#">PELÍCULAS</a>
-      </div>
+      <ul class = "nav-menu">
+        <li class = "menu peliculas"><a href="#" class = "nav-link">PELÍCULAS</a></li>
+        <li class = "menu personajes"><a href="#" class = "nav-link">PERSONAJES</a></li>
+      </ul>
   
-      <div id="menu personajes">
-        <a href="#">PERSONAJES</a>
-      </div>
+
+      
+        
+     
     </nav>
-  </header>
 
- 
 
-  <main>
-    <aside>
-      <h3>¡Bienvenidos a Ghibli Fandom!</h3>
-      <p>Studio Ghibli es un estudio de animación japonés, con sede en Tokio. 
-        <br>Fue fundado en 1985 por Hayao Miyazaki y Isao Takahata. 
-        <br>A día de hoy, han realizado más de 20 películas, además de otras clases de trabajos (cortometrajes, anuncios publicitarios, etc).</p>
-    </aside>
+    <main>
+      <aside>
+        <h3>¡Bienvenidos a Ghibli Fandom!</h3>
+        <p>Studio Ghibli es un estudio de animación japonés, con sede en Tokio.
+          <br>Fue fundado en 1985 por Hayao Miyazaki y Isao Takahata.
+          <br>A día de hoy, han realizado más de 20 películas, además de otras clases de trabajos (cortometrajes,
+          anuncios publicitarios, etc).
+        </p>
+      </aside>
 
-    <section>
-      <figure id = "Castle in the sky">
-        <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg" alt="Poster Castle in the sky">
-        <p>Castle in the sky</p>
+      <section>
+        <figure id="Castle in the sky">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg"
+            alt="Poster Castle in the sky">
+          <p>Castle in the sky</p>
+        </figure>
+
+        <figure id="My Neighbor Totoro">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg"
+            alt="y Neighbor Totoro">
+        </figure>
+      </section>
+
+    </main>
+
+    <footer>
+      <!--Page information copyright-->
+      &copy;2021 GHIBLI FANDOM
+
+      <figure id="logo sin fondo ghibli">
+        <img src="IMG/studio-ghibli-logo (sin fondo).svg" width = "100" alt="logo sin fondo">
       </figure>
 
-      <figure id = "My Neighbor Totoro">
-        <img src="https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg" alt="y Neighbor Totoro">
+      <figure id="red social facebook>
+      <img src="" alt=" logo facebook">
       </figure>
-    </section>
-
-  </main>
-
-  <footer>
-    <!--Page information copyright-->
-    &copy;2021 GHIBLI FANDOM
-
-    <figure id = "logo sin fondo ghibli">
-      <img src="IMG/studio-ghibli-logo (sin fondo).svg" alt="logo sin fondo">
-    </figure>
-
-    <figure id = "red social facebook>
-      <img src="" alt="logo facebook">
-    </figure>
 
 
 
 
 
-  </footer>
+    </footer>
+
+  </div>
 
 
 
