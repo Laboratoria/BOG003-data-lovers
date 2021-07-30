@@ -1,3 +1,4 @@
+
 import { calculoEstadistico, filtrarRegion, ordenarFiltrar } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
@@ -25,7 +26,7 @@ const paginaListado = (region) => {
     if (region === "johto") {
         let pokemonJohto = filtrarRegion(dataPoke, "johto");
         limpiarPokemon(dataPoke);
-        template(pokemonJohto);
+        mostrarTarjetas(pokemonJohto);
 
 
 
@@ -34,7 +35,7 @@ const paginaListado = (region) => {
             const order = document.getElementById("orden").value;
 
             limpiarPokemon(dataPoke);
-            template(ordenarFiltrar(pokemonJohto, tipo, order));
+            mostrarTarjetas(ordenarFiltrar(pokemonJohto, tipo, order));
 
         });
 
@@ -43,7 +44,7 @@ const paginaListado = (region) => {
             const order = document.getElementById("orden").value;
 
             limpiarPokemon(dataPoke);
-            template(ordenarFiltrar(pokemonJohto, tipo, order));
+            mostrarTarjetas(ordenarFiltrar(pokemonJohto, tipo, order));
 
         })
     }
@@ -51,14 +52,14 @@ const paginaListado = (region) => {
     if (region === "kanto") {
         let pokemonKanto = filtrarRegion(dataPoke, "kanto");
         limpiarPokemon(dataPoke);
-        template(pokemonKanto);
+        mostrarTarjetas(pokemonKanto);
 
         document.getElementById("tipo").addEventListener("change", () => {
             const tipo = document.getElementById("tipo").value;
             const order = document.getElementById("orden").value;
 
             limpiarPokemon(dataPoke);
-            template(ordenarFiltrar(pokemonKanto, tipo, order));
+            mostrarTarjetas(ordenarFiltrar(pokemonKanto, tipo, order));
         });
 
         document.getElementById("orden").addEventListener("change", () => {
@@ -66,21 +67,21 @@ const paginaListado = (region) => {
             const order = document.getElementById("orden").value;
 
             limpiarPokemon(dataPoke);
-            template(ordenarFiltrar(pokemonKanto, tipo, order));
+            mostrarTarjetas(ordenarFiltrar(pokemonKanto, tipo, order));
         })
     }
 
 
     if (region === "ambos") {
         limpiarPokemon(dataPoke);
-        template(dataPoke);
+        mostrarTarjetas(dataPoke);
 
         document.getElementById("tipo").addEventListener("change", () => {
             const tipo = document.getElementById("tipo").value;
             const order = document.getElementById("orden").value;
 
             limpiarPokemon(dataPoke);
-            template(ordenarFiltrar(dataPoke, tipo, order));
+            mostrarTarjetas(ordenarFiltrar(dataPoke, tipo, order));
         });
 
         document.getElementById("orden").addEventListener("change", () => {
@@ -88,7 +89,7 @@ const paginaListado = (region) => {
             const order = document.getElementById("orden").value;
 
             limpiarPokemon(dataPoke);
-            template(ordenarFiltrar(dataPoke, tipo, order));
+            mostrarTarjetas(ordenarFiltrar(dataPoke, tipo, order));
         })
     }
 
@@ -97,7 +98,7 @@ const paginaListado = (region) => {
 
 /*En este bloque de codigo renderizamos las tarjetas pokemon, con su número, nombre e imagen
 A su vez, se realiza un evento click para llamar a la tarjeta informativa (Modal) */
-const template = (dataPoke) => {
+const mostrarTarjetas = (dataPoke) => {
         for (let poke of dataPoke) {
 
 
@@ -168,14 +169,14 @@ const modal = (poke) => {
 
     // Contenido de la tarjeta informativa 
     const contenidoModal = document.createElement("div");
-    contenidoModal.classList.add("content");
+    contenidoModal.classList.add("contenidoModal");
     contenidoModal.setAttribute("id", `${poke}`);
     contenidoModal.setAttribute("hiden", "");
     divModal.appendChild(contenidoModal);
 
     // Encabezado de la tarjeta
     const encabezado = document.createElement("div");
-    encabezado.classList.add("header");
+    encabezado.classList.add("encabezado");
     contenidoModal.appendChild(encabezado);
 
     const botonCerrar = document.createElement("div");
@@ -195,11 +196,11 @@ const modal = (poke) => {
 
     // Contenido lado A de la tarjeta
     const cuerpoModalA = document.createElement("div");
-    cuerpoModalA.classList.add("body");
-    cuerpoModalA.setAttribute("id", "modal-body");
+    cuerpoModalA.classList.add("cuerpoModalA");
+    cuerpoModalA.setAttribute("id", "modal-cuerpo");
 
     const titulo = document.createElement("div");
-    titulo.classList.add("title");
+    titulo.classList.add("titulo");
     cuerpoModalA.appendChild(titulo);
 
     // Nombre y número del Pokémon
@@ -332,12 +333,12 @@ const modal = (poke) => {
     //Contenido lado B de la tarjeta informativa
 
     const cuerpoModalB = document.createElement("div");
-    cuerpoModalB.classList.add("bodyB");
+    cuerpoModalB.classList.add("cuerpoModalB");
     cuerpoModalB.setAttribute("hidden", "");
-    cuerpoModalB.setAttribute("id", "modal-body");
+    cuerpoModalB.setAttribute("id", "modal-cuerpo");
 
     const tituloB = document.createElement("div");
-    tituloB.classList.add("titleB");
+    tituloB.classList.add("tituloB");
     cuerpoModalB.appendChild(tituloB);
 
     // Estadísticos del Pokémon (ataque, defensa, etc)
@@ -440,7 +441,7 @@ const modal = (poke) => {
         textoEvolucion.textContent = "Next-evolution";
         divEvolucion.insertBefore(textoEvolucion, evolucionImagen);
         const laEvolucion = poke.evolution["next-evolution"][0]["num"];
-        //evolucionImagen.textContent = "Next-Evolution";
+        
         evolucionImagen.src = "https://www.serebii.net/pokemongo/pokemon/" + laEvolucion + ".png";
         evolucionImagen.classList.add("evolucionImg");
     }
@@ -457,15 +458,15 @@ const modal = (poke) => {
     })
 
     botonRotar.addEventListener("click", () => {
-        document.getElementsByClassName("body")[0].style.display = "none";
-        document.getElementsByClassName("bodyB")[0].style.display = "block";
+        document.getElementsByClassName("cuerpoModalA")[0].style.display = "none";
+        document.getElementsByClassName("cuerpoModalB")[0].style.display = "block";
         document.getElementsByClassName("rotar-btnB")[0].removeAttribute("style");
         document.getElementsByClassName("rotar-btn")[0].setAttribute("style", "background: rgba(140, 131, 131, 0.26)");
     });
 
     botonRotarB.addEventListener("click", () => {
-        document.getElementsByClassName("body")[0].style.display = "block";
-        document.getElementsByClassName("bodyB")[0].style.display = "none";
+        document.getElementsByClassName("cuerpoModalA")[0].style.display = "block";
+        document.getElementsByClassName("cuerpoModalB")[0].style.display = "none";
         document.getElementsByClassName("rotar-btn")[0].removeAttribute("style");
         document.getElementsByClassName("rotar-btnB")[0].setAttribute("style", "background: rgba(140, 131, 131, 0.26)");
     });
@@ -480,7 +481,8 @@ const modal = (poke) => {
 
 // Se hace el llamado de funciones, ya sea directo o por medio de clicks
 
-template(dataPoke);
+
+mostrarTarjetas(dataPoke);
 
 const botonJohto = document.getElementById("johto");
 botonJohto.addEventListener("click", () => paginaListado("johto"));
@@ -495,3 +497,4 @@ const botonVolver = document.getElementById("flechaVolver");
 botonVolver.addEventListener("click", bienvenida);
 
 bienvenida();
+
