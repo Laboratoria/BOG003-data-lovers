@@ -10,7 +10,7 @@
       padding: 2.5%;
       height: 100vh;
   }
-  
+ /*Página de bienvenida */
   .titulo_imagen_poketoriaPokebola {
       display: flex;
       padding: 10% 4% 0% 4%;
@@ -34,26 +34,13 @@
       min-height: 97vh;
   }
   
-  #contenido2 {
-      background-color: #ECFAFB;
-      border: 5px solid #000000;
-      box-sizing: border-box;
-      border-radius: 31px;
-      width: 94vw;
-      height: 70%;
-      margin-bottom: 30%;
-      display: flex;
-      flex-direction: column;
-      align-items: center
-  }
-  
   main p {
       font-family: 'Press Start 2P', serif;
       font-size: 16px;
       text-align: center;
       margin: 5%;
       line-height: 18px;
-  }
+    }
   
   .contenedor1 button {
       border: 3px solid;
@@ -99,7 +86,9 @@
       margin-top: -4vh;
       margin-bottom: 4vh;
   }
-  
+
+/* Página listado de Pokémon */
+
   #flechaVolver {
       /* position: relative; */
       color: #E23955;
@@ -108,7 +97,20 @@
       font-size: 23px;
       margin-right: 68vw;
   }
-  
+ 
+  #contenido2 {
+    background-color: #ECFAFB;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 31px;
+    width: 94vw;
+    height: 70%;
+    margin-bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
   .tarjetaIndividual {
       width: 100%;
       display: grid;
@@ -116,15 +118,14 @@
       grid-template-rows: auto;
       grid-gap: 30px;
       grid-template-areas: "." "pokeNum pokeNombre . pokeImg" ".";
-      /* justify-items: end; */
       justify-content: space-between;
-  }
+    }
   
   #listadoPokemon {
       display: flex;
       flex-direction: column;
       margin-top: 0vh;
-  }
+    }
   
   .tarjetaPokemon {
       background-color: #DC9091;
@@ -162,7 +163,7 @@
       grid-area: pokeNum;
       justify-self: center;
       align-self: center;
-  }
+    }
   
   h4 {
       font-family: 'Press Start 2P', serif;
@@ -180,10 +181,7 @@
   }
   
   select {
-      /* -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none; */
+     
       outline: 0;
       box-shadow: none;
       border: #000000 solid;
@@ -192,11 +190,11 @@
       margin-bottom: 2.5vh;
       background: #C4C4C4;
       margin-right: 0vw;
-  }
+    }
   
   select:hover {
       box-shadow: 0 0 10px #b68e94, 0 0 40px #c07c87, 0 0 80px #a86876;
-  }
+    }
   
   .opciones {
       position: relative;
@@ -214,7 +212,9 @@
       height: 10vh;
       margin-top: 3vh;
   }
-  
+
+/*Tarjeta informativa */
+
   #modal {
       display: none;
       font-family: 'Press Start 2P', serif;
@@ -229,7 +229,7 @@
       overflow: auto;
   }
   
-  #modal .content {
+  #modal .contenidoModal {
       margin: auto;
       height: 80vh;
       border-radius: 20px;
@@ -241,8 +241,7 @@
       box-sizing: border-box;
   }
   
-  #modal .content .header {
-      /* padding: 5px; */
+  #modal .contenidoModal .encabezado {
       margin-top: -12px;
       display: flex;
       flex-shrink: 0;
@@ -250,12 +249,10 @@
       justify-content: space-between;
       border-bottom: 1px solid black;
       margin-bottom: 2vh;
-  }
-  /* #modal .content .header .title {
-      padding-right: 10px;
-  } */
+    }
   
-  #modal .content .header h1 {
+  
+  #modal .contenidoModal .encabezado h1 {
       font-size: 12px;
   }
   
@@ -274,15 +271,17 @@
       border-left: solid 3px;
       border-right: solid;
       height: 4vh;
-  }
-  
-  #modal .content .body {
+    }
+
+/*Lado A modal */
+
+  #modal .contenidoModal .cuerpoModalA {
       font-size: 12px;
       overflow: auto;
       padding: 10px;
   }
-  
-  .title {
+
+  .titulo {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -294,18 +293,16 @@
   }
   
   .marco {
-      /* background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg); */
-      /* background-image: url(https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg); */
+      
       border: solid black 5px;
       display: flex;
       justify-content: center;
-      /* background-position: center; */
       margin-top: 3vh;
-  }
+    }
   
   .imagenPokemonTarjeta {
       justify-self: center;
-      /* margin-left: 70px; */
+     
   }
   
   .tipos {
@@ -343,7 +340,9 @@
   
   .peso {
       font-size: 20px;
-  }
+    }
+
+/* Lado B modal */
   
   .estadisticos {
       background-color: white;
@@ -353,12 +352,12 @@
       padding-top: 2vh;
       margin-top: 2vh;
       line-height: 18px;
-  }
+    }
   
-  .titleB {
+  .tituloB {
       display: flex;
       justify-content: center;
-  }
+    }
   
   .resistenciaTitulo,
   .debilidadTitulo {
@@ -378,7 +377,7 @@
   }
   
   .debilidades {
-      margin-bottom: 2vh;
+    margin-bottom: 2vh;
   }
   
   .evoluciones {
@@ -400,4 +399,4 @@
   .tallaTitulo,
   .pesoTitulo {
       width: 18vh;
-  }
+    }

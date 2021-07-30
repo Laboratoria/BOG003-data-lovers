@@ -11,6 +11,7 @@ body {
     height: 100vh;
 }
 
+/* Página de bienvenida */ 
 .titulo_imagen_poketoriaPokebola {
     display: flex;
     padding: 4vh 4vh 0vh 4vh;
@@ -41,18 +42,7 @@ body {
     align-items: center
 }
 
-#contenido2 {
-    background-color: #ECFAFB;
-    border: 5px solid #000000;
-    box-sizing: border-box;
-    border-radius: 31px;
-    width: 94vw;
-    height: 70%;
-    margin-bottom: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center
-}
+
 
 main p {
     font-family: 'Press Start 2P', serif;
@@ -114,6 +104,8 @@ button h3 {
     cursor: pointer;
 }
 
+/* Página listado de Pokémon */ 
+
 #flechaVolver {
     cursor: pointer;
     /* position: relative; */
@@ -129,6 +121,19 @@ button h3 {
     text-shadow: 0 0 10px #644f52, 0 0 40px #574246, 0 0 80px #7c4b56;
 }
 
+#contenido2 {
+    background-color: #ECFAFB;
+    border: 5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 31px;
+    width: 94vw;
+    height: 70%;
+    margin-bottom: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
 .tarjetaIndividual {
     display: grid;
     grid-template-columns: 20vw 20vw 20vw;
@@ -138,28 +143,11 @@ button h3 {
 }
 
 
-/* #pokeNum {
-    grid-area: pokeNum;
-}
-
-#pokeNombre {
-    grid-area: pokeNombre;
-}
-
-#pokeImg {
-    grid-area: pokeImg;
-} */
-
 #listadoPokemon {
     display: flex;
     flex-direction: column;
     margin-top: -4vh;
 }
-
-
-/* .tarjetaIndividual {
-    background-color: #DC9091;
-} */
 
 .tarjetaPokemon {
     background-color: #DC9091;
@@ -188,12 +176,6 @@ h3 {
     margin-left: 5vh;
 }
 
-
-/* .opciones {
-    display: flex;
-    flex-direction: row;
-} */
-
 h4 {
     font-family: 'Press Start 2P', serif;
     font-size: 15px;
@@ -209,10 +191,7 @@ h4 {
 }
 
 select {
-    /* -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    appearance: none; */
+   
     outline: 0;
     box-shadow: none;
     border: #000000 solid;
@@ -237,27 +216,13 @@ select:hover {
     margin-bottom: 8vh;
 }
 
-
-/*.opciones::after {
-    content: '\25BC';
-    position: absolute;
-    top: 20%;
-    right: 97vh;
-    padding: 0 1em;
-    cursor: pointer;
-    pointer-events: none;
-} */
-
-
-/*.opciones:hover::after {
-    color: #2F3EC9;
-}*/
-
 .imagen_poketoria_2 {
     width: 46vw;
     height: 18vh;
     margin-top: 8vh;
 }
+
+/* Tarjeta informativa */
 
 #modal {
     display: none;
@@ -273,9 +238,9 @@ select:hover {
     overflow: auto;
 }
 
-#modal .content {
+#modal .contenidoModal {
     margin: auto;
-    /*background-color: white;*/
+    
     height: 85vh;
     border-radius: 20px;
     display: flex;
@@ -286,7 +251,7 @@ select:hover {
     box-sizing: border-box;
 }
 
-#modal .content .header {
+#modal .contenidoModal .encabezado {
     padding: 10px;
     display: flex;
     flex-shrink: 0;
@@ -295,11 +260,11 @@ select:hover {
     border-bottom: 1px solid black;
 }
 
-#modal .content .header .title {
+#modal .contenidoModal .encabezado .titulo {
     padding-right: 10px;
 }
 
-#modal .content .header h1 {
+#modal .contenidoModal .encabezado h1 {
     font-size: 12px;
 }
 
@@ -320,7 +285,8 @@ select:hover {
     height: 4vh;
 }
 
-#modal .content .body {
+/* Lado A modal */
+#modal .contenidoModal .cuerpoModalA {
     font-size: 12px;
     overflow: auto;
     padding: 10px;
@@ -330,7 +296,7 @@ select:hover {
     padding-right: 15px;
 }
 
-.title {
+.titulo {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -338,18 +304,15 @@ select:hover {
 }
 
 .marco {
-    /* background-image: url(https://assets.pokemon.com//assets/cms2-es-es/img/misc/virtual-backgrounds/masters/forest.jpg); */
-    /* background-image: url(https://p4.wallpaperbetter.com/wallpaper/933/827/743/pokemon-pixel-art-wallpaper-preview.jpg); */
     border: solid black 5px;
     display: flex;
     justify-content: center;
-    /* background-position: center; */
     margin-top: 3vh;
 }
 
 .imagenPokemonTarjeta {
     justify-self: center;
-    /* margin-left: 70px; */
+   
 }
 
 .tipos {
@@ -382,13 +345,15 @@ select:hover {
 
 .talla {
     border-right: solid black 3px;
-    /*padding-right: 2vh; */
+    
     font-size: 20px;
 }
 
 .peso {
     font-size: 20px;
 }
+
+/* Lado B modal */
 
 .estadisticos {
     background-color: white;
