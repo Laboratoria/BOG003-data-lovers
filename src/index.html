@@ -3,20 +3,23 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Data Lovers</title>
-  <link rel="stylesheet" href="style.css" />
   <!--meta viewport tag-->
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+  <title>Data Lovers</title>
+  <link rel="stylesheet" href="style.css" />
   <!--import font-->>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <!--import icons-->
+  <script src="https://kit.fontawesome.com/172df10f30.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="flex-container">
+  <!--create flexbox container-->
+  <section class="flex-container">
     <header>
       <!--Insert logo-->
       <div class="logo">
-        <img src="IMG/logo ghibli.png" width = "300" alt="logo-ghibli">
+        <img src="IMG/logo ghibli.png" width = "250" alt="logo-ghibli">
       </div>
 
       <!--Insert title-->
@@ -26,14 +29,19 @@
     <!--Insert nav "peliculas" o "personajes"-->
     <nav>
       <ul class = "nav-menu">
-        <li class = "menu peliculas"><a href="#" class = "nav-link">PELÍCULAS</a></li>
-        <li class = "menu personajes"><a href="#" class = "nav-link">PERSONAJES</a></li>
+        <li class = "menu peliculas"><a href="#" class = "nav-link">Películas</a></li>
+        <li class = "menu personajes"><a href="#" class = "nav-link">Personajes</a></li>
       </ul>
-  
+    </nav>
 
-      
-        
-     
+    <nav class = "sort-by">
+      <a href="#" class = "sort-by">Ordenar por: <i class="fas fa-chevron-circle-down"></i></a>
+      <ul class = "nav-sort">
+        <li><a href="#" class = "sort-a-z">A-Z</a></li>
+        <li><a href="#" class = "sort-año">Año reciente</a></li>
+        <li><a href="#" class = "sort-rt">Rt Score</a></li>
+      </ul>
+
     </nav>
 
 
@@ -80,7 +88,7 @@
 
     </footer>
 
-  </div>
+  </section>
 
 
 
