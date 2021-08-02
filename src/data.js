@@ -46,7 +46,7 @@ export const ordenarFiltrar = (datos, tipo, order) => {
 
 }
 
-const filtrarTipo = (datos, tipo) => {
+export const filtrarTipo = (datos, tipo) => {
     /*Esta función filtra los Pokémon segun su tipo */ 
     return datos.filter((dato) => (dato.type.includes(tipo)));
 }
@@ -57,7 +57,7 @@ export const filtrarRegion = (datos, region) => {
 }
 
 
-const ordenarPokemon = (datos, atributo, orden) => {
+export const ordenarPokemon = (datos, atributo, orden) => {
     /* Esta función ordena los datos numéricamente o alfabéticamente
         en orden ascendente y por promedio y desviación, descendente y ascendente, respectivamente */
 
