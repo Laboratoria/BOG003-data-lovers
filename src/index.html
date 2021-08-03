@@ -27,60 +27,103 @@
     </header>
 
     <!--Insert nav "peliculas" o "personajes"-->
-    <nav>
-      <ul class = "nav-menu">
-        <li class = "menu peliculas"><a href="#" class = "nav-link">Películas</a></li>
-        <li class = "menu personajes"><a href="#" class = "nav-link">Personajes</a></li>
-      </ul>
+    <nav class = "nav-menu">
+      <a href="#" class = "nav-link">Películas</a>
+      <a href="#" class = "nav-link">Personajes</a>
     </nav>
 
-    <nav class = "sort-by">
-      <a href="#">Ordenar por: <i class="fas fa-chevron-circle-down"></i></a>
+    <!--Insert nav "sort by"-->
+    <nav class = "nav-sort-by">
+      <a href="#" class= "botton-sort">Ordenar por: <i class="fas fa-chevron-circle-down"></i></a>
       <ul class = "nav-sort">
         <li><a href="#">A-Z</a></li>
         <li><a href="#">Año reciente</a></li>
         <li><a href="#">Rt Score</a></li>
       </ul>
-
     </nav>
 
 
     <main>
       <aside>
         <h3>¡Bienvenidos a Ghibli Fandom!</h3>
-        <p>Studio Ghibli es un estudio de animación japonés, con sede en Tokio.
-          <br>Fue fundado en 1985 por Hayao Miyazaki y Isao Takahata.
-          <br>A día de hoy, han realizado más de 20 películas, además de otras clases de trabajos (cortometrajes,
-          anuncios publicitarios, etc).
+        <br>
+        <p><a href= "https://es.wikipedia.org/wiki/Studio_Ghibli">Studio Ghibli</a> es un estudio de animación japonés, con sede en Tokio.
+          <br>
+          <br>
+          Fue fundado en 1985 por <a href= "https://es.wikipedia.org/wiki/Hayao_Miyazaki">Hayao Miyazaki</a>, <a href= "https://es.wikipedia.org/wiki/Isao_Takahata">Isao Takahata</a> y el productor <a href= "https://es.wikipedia.org/wiki/Toshio_Suzuki_(productor)">Toshio Suzuki</a>.
+          <br>
+          <br>
+          A día de hoy, han realizado más de 20 películas, además de otras clases de trabajos.
+          <br>
+          <br>
+          El nombre Ghibli fue elegido por Hayao Miyazaki y deriva de la palabra italiana «ghibli», basada en el nombre del viento cálido del desierto que sopla en Libia.
+          <br>
+          <br>
+          También hace referencia a un avión italiano, el Caproni Ca.309 Ghibli. 
+          <br>
+          <br>
         </p>
       </aside>
 
-      <section>
+      <section class="main">
         <figure id="Castle in the sky">
           <img src="https://static.wikia.nocookie.net/studio-ghibli/images/c/c1/Castle_in_the_Sky.jpg"
             alt="Poster Castle in the sky">
           <p>Castle in the sky</p>
+          <p>El Castillo en el Cielo<br><br></p>
         </figure>
 
         <figure id="My Neighbor Totoro">
           <img src="https://static.wikia.nocookie.net/studio-ghibli/images/d/db/My_Neighbor_Totoro.jpg"
-            alt="y Neighbor Totoro">
+            alt="My Neighbor Totoro">
+            <p>My Neighbor Totoro</p>
+            <p>Mi vecino Totoro<br><br></p>
+            
         </figure>
+
+        <figure id="Kiki's Delivery Service">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/4/48/Kiki%27s_Delivery_Service_%282%29.jpg"
+            alt="Kiki's Delivery Service">
+            <p>Kiki's Delivery Service</p>
+            <p>Kiki: Entregas a Domicilio<br><br></p>
+        </figure>
+
+        <figure id="Grave of the Fireflies">
+          <img src="https://static.wikia.nocookie.net/studio-ghibli/images/a/a5/Grave_of_the_Fireflies_Japanese_poster.jpg"
+            alt="Grave of the Fireflies">
+            <p>Grave of the Fireflies</p>
+            <p>La Tumba de las Luciérnagas<br><br></p>
+        </figure>
+
       </section>
 
     </main>
 
     <footer>
       <!--Page information copyright-->
-      &copy;2021 GHIBLI FANDOM
+      <h4>&copy;2021 <a href= "">GHIBLI FANDOM</a></h4>
 
       <figure id="logo sin fondo ghibli">
         <img src="IMG/studio-ghibli-logo (sin fondo).svg" width = "100" alt="logo sin fondo">
       </figure>
 
-      <figure id="red social facebook>
-      <img src="" alt=" logo facebook">
-      </figure>
+      <div class= "redes-sociales">
+        <figure id="facebook">
+          <img src="IMG/facebook-blanco.png" width = "50" alt="logo facebook">
+        </figure>
+    
+        <figure id="instagram">
+          <img src="IMG/instagram-blanco.png" width = "50" alt="logo instagram">
+        </figure>
+
+        <figure id="twitter">
+          <img src="IMG/twitter-blanco.png" width = "50" alt="logo twitter">
+        </figure>
+
+        <figure id="github">
+          <a href="https://github.com/KGISELLE/BOG003-data-lovers/tree/giselle"><img src="IMG/github.png" width = "38" alt="logo github"></a>
+        </figure>
+      </div>
 
     </footer>
 
