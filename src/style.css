@@ -28,61 +28,46 @@ header{
     /*Flex*/
     display: flex;
     flex-flow: row wrap;
-    justify-content:flex-start;
+    justify-content:center;
     align-items: center;
 }
 
 header .logo{
     padding: 10px;
+    flex: 1 1 10%;
 }
 
-h1{
+header h1{
     color: whitesmoke;
     font-weight: bold;
     font-size: 35px;
-    margin-left: 50px;
     padding: 5px;
     text-align: center;
     padding: 5px;
+    flex: 1 1 70%;
 }
 
-nav{
-    
-    margin:0px;
-    padding:0px;
-    position: absolute;
-    top: 200px;
+
+/*<nav class = "nav-menu">*/
+.nav-menu{
     width: 100%;
     /*Flex*/
     display:flex;
-    justify-content: space-between;
-}
-
-/*<ul class = "nav-menu>*/
-.nav-menu{
-    display: inline-block;
-    background-color:darkmagenta;
-    margin-left: 0px;
-    line-height: 25px;
-    text-align:center;
-    /*para que en pantallas mas grandes quede centrado*/
-    justify-content: center;
-}
-
-/*<li class = "menu peliculas"> y <li class = "menu personajes">*/
-.nav-menu li{
-    display:inline-block;
-    /*longitud cada barra de selecion nav-menu*/
-    width: 523px;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 /*<a href="#" class = "nav-link">*/
 .nav-link{
-    display: block;
+    background-color:darkmagenta;
     color: snow;
     text-decoration: none;
     font-weight: bold;
     font-size: 15px;
+    line-height: 30px;
+    text-align:center;
+    /*Flex*/
+    flex-grow: 1;
 }
 
 .nav-link:hover{
@@ -92,9 +77,8 @@ nav{
     transition: 0.5s;
 }
 
-/*<nav class =".sort-by>*/
-.sort-by{
-    display: block;
+/*nav class = "nav-sort-by">*/
+.nav-sort-by{
     color: snow;
     text-decoration: none;
     font-weight: bold;
@@ -105,18 +89,19 @@ nav{
     line-height: 25px;
     text-align:center;
     border-radius: 5px;
-    /*espacio entre nav menu y nav sort-by*//*top: 130px*/
-    margin: 30px 10px 
+    /*espacio entre nav menu y nav sort-by*/
+    margin: 5px 10px;
+    
 }
 
-.sort-by:hover{
+.nav-sort-by:hover{
     background-color:plum;
     color: black;
     transition: 0.5s;
 }
 
-/*<a href="#" class = "by">Ordenar por:*/
-.sort-by a{
+/*<a href="#" class= "botton-sort">Ordenar por:*/
+.botton-sort{
     text-decoration: none;
     display: block;
     color: snow;
@@ -130,17 +115,13 @@ nav{
     display: block;
     text-align: center;
     border-radius: 5px;
-    margin: 5px 5px 5px 10px;
-    
-
-
+    margin: 5px;
 }
 
 .nav-sort li a:hover{
     background-color:plum;
     color: black;
     transition: 0.5s;
-
 }
 
 .nav-sort li{
@@ -148,18 +129,85 @@ nav{
     display: none;
 }
 
-
-
 main{
-    position: absolute;
-    top: 300px;
+    width: 100%;
+    /*Flex*/
+    display: flex;
+}
+
+/*<section class="main">*/
+.main{
+    padding: 5px 10px;
+    margin-bottom: 50px;
+    /*Flex*/
+    display: flex;
+    flex: 1 1 80%;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.main p{
+    text-align: center;
+    font-weight: bold;
+}
+
+aside{
+    background-color: rgb(31, 46, 73);
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 5px 10px;
+    /*flex*/
+    flex: 1 1 20%;
+}
+
+h3{
+    text-align: center;
+    background-color:darkmagenta;
+    border-radius: 5px;
+}
+
+aside p{
+    text-align: justify;
+}
+
+aside p a{
+    text-decoration: none;
+    color:lightpink;
 }
 
 
 
 footer{
-    position: absolute;
-    top: 1000px;
+    background-color:darkmagenta;
+    width: 100%;
+    padding: 5px;
+    /*Flex*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+    
+
+h4{
+    margin-left: 20px;
+    color: black;
 }
 
+h4 a{
+    color: whitesmoke;
+    text-decoration: none;
+}
 
+.redes-sociales{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: space-around;
+    margin: 0px 20px
+}
+
+#github{
+    margin-left: 10px;
+}
