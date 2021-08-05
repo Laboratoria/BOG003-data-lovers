@@ -3,17 +3,23 @@ import data from './data/ghibli/ghibli.js';
 
 let allMovies = data.films;
 //console.log(allMovies[0].poster);
-let moviePoster=allMovies[2].poster;
-let screenPoster= document.createElement("IMG");
-screenPoster.setAttribute("src", moviePoster);
-screenPoster.setAttribute("alt", "third poster");
-
-document.body.appendChild(screenPoster);
-
-console.log(moviePoster);
 
 
-git 
+for (let i=0; i<allMovies.length;i++){
+    let screenPoster= document.createElement("IMG");
+    //let titleofMovie=document.createElement("TITLE");
+    //titleofMovie=allMovies[i].title;
+    screenPoster.setAttribute("src", allMovies[i].poster);
+    document.body.appendChild(screenPoster);    
+}
+
+
+//document.body.appendChild(screenPoster);
+
+//console.log(moviePoster);
+
+
+
 for (let item = 0; item < allMovies.length; item++) {
     console.log(allMovies[item].title);
     console.log()
