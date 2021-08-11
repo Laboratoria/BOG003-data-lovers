@@ -1,12 +1,104 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html translate="yes" lang="en">
+
+<head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="root"></div>
+    <title>Pokétoria</title>
+    <link rel="stylesheet" href="style.css" media="screen and (max-width: 800px)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./tablet.css" media="screen and (min-width: 800px)" />
+    <link rel="stylesheet" href="./desk.css" media="screen and (min-width: 1000px)" />
+    <link rel="icon" href="./img/pokebola.ico" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="contenedor1">
+        <section class="bienvenida" id="bienvenida">
+            <main class="contenido">
+                <figure class="titulo_imagen_poketoriaPokebola">
+                    <img class="imagen_poketoria" src="img/tituloPoketoria.png" alt="titulo_poketoria">
+                    <img class="imagen_pokebola" src="img/pokebola.png" alt="imagen pokebola">
+                </figure>
+                <p>In Pokétoria you will find the most relevant information about your favorite Pokémon, you can filter and sort them according to your tastes and needs. Go ahead and choose a PokéDex:</p>
+                <div class="boton1y2">
+                    <button id="johto">
+                            <img class="imagen_boton" src="img/imgjohto.png" alt="imagen johto">
+                            <h3>Johto</h3>
+                        </button>
+                    <button id="kanto">
+                            <img class="imagen_boton" src="img/imgkanto.png" alt="Imagen kanto">
+                            <h3>Kanto</h3> 
+                        </button>
+                </div>
+                <button id="ambos">
+                        <img class="imagen_boton3" src="img/imgkantoyjohto.png" alt="Imagen johtoYkanto">
+                        <h3> Johto &amp; Kanto </h3>
+                    </button>
+            </main>
+        </section>
+        <section class="pagListado" id="pagListado">
+            <main id="contenido2">
+                <figure>
+                    <img class="imagen_poketoria_2" src="img/tituloPoketoria.png" alt="titulo_poketoria">
+                </figure>
+                <div class="opciones">
+                    <figure id="flechaVolver">🡸</figure>
+                    <h4>Filter by:</h4>
+                    <div class="custom-select">
+                        <select name="Tipo" id="tipo">
+
+                            <option >Type</option>
+                            <option value="0" id="todos">All</option>
+                            <option value="normal" id="normal">Normal</option> 
+                            <option value="grass" id="grass">Grass</option> 
+                            <option value="fire" id="fire">Fire</option> 
+                            <option value="water" id="water">Water</option>
+                            <option value="steel">Steel</option> 
+                            <option value="electric">Electric</option> 
+                            <option value="ice">Ice</option> 
+                            <option value="fighting">Fighting</option>
+                            <option value="poison">Poison</option> 
+                            <option value="rock">Rock</option> 
+                            <option value="flying">Flying</option> 
+                            <option value="psychic">Psychic</option>
+                            <option value="bug">Bug</option> 
+                            <option value="ground">Ground</option> 
+                            <option value="ghost">Ghost</option>
+                            <option value="dragon">Dragon</option> 
+                            <option value="dark">Dark</option>
+                        </select>
+                    </div>
+                    <h4>sort by:</h4>
+                    <select name="orden" id="orden">
+                        <option value=""></option>
+                        <option value="name">Name</option> 
+                        <option value="num">Num</option> 
+                        <option value="baseProm">Average basic statistics</option>
+                        <option value="baseDesviacion">Base balance</option>
+                    </select>
+
+                </div>
+
+                <div id="listadoPokemon"></div>
+                <div id="prueba"></div>
+
+
+
+
+
+            </main>
+        </section>
+    </div>
+
+    <div id="modal" hidden>
+
+    </div>
+
     <script src="main.js" type="module"></script>
-  </body>
+</body>
+
 </html>
